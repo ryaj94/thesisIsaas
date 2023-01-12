@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/style.css'%}">
+  <title>Student Profile</title>
+</head>
+<body>
+  <!--Nav Bar-->
+  <nav class="navbar navbar-light bg-light shadow bg-body rounded">
+    <div class="container-fluid">
+      <a class="navbar-brand">Student Advising</a>
+      <form class="d-flex">
+        <button class="btn btn-outline-success" type="submit">User Name</button>
+      </form>
+    </div>
+  </nav>
+  
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse bg-light shadow-sm" style="height: 100%;">
+      <div class="d-flex flex-column position-sticky pt-4" style="height:90vh;">
+          <!-- side bar-->
+          <ul class="nav nav-pills flex-column mb-auto">
+              <li class="nav-item mb-1"> <!-- user profile-->
+                  <a class="nav-link d-flex justify-content-between active text-white bg-success text-decoration-none" href="{% url 'home' %}" aria-current="page" id="profile-tab" data-bs-toggle="pill" data-bs-target="#profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="true">
+                      <div>
+                          Student Profile 
+                      </div> 
+                  </a>
+              </li>
+              <li class="nav-item mb-1"> <!-- Student Advising-->
+                  <a class="nav-link text-dark shadow-sm bg-body rounded"  href="{% url 'studadvise'%}" data-bs-toggle="pill"  type="button"  role="tab"  aria-selected="true">
+                      Student Advising
+                  </a>
+              </li>
+              <li class="nav-item mb-1"> <!--Logout-->
+                  <a class="nav-link text-dark shadow-sm  bg-body rounded"  data-bs-toggle="pill" href="{% url 'logout' %}" type="button" role="tab" aria-selected="true">
+                     Logout
+                  </a>
+              </li>
+              
+          </ul>
+      </div>
+    </nav>
+    <!--CONTENT-->
+    <!--student PRofile-->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-5" style="overflow-y: auto; margin-top: 2.5vh;">
+      <!--Academic Info-->
+      <div class="row mt-3">
+        <div class="col-md-3">
+          <div class="card shadow" >
+            <div class="card-body">
+              <small class="mb-0 text-muted">Student No.</small>    
+              <p class="mb-1">{{user}}</p>            
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 ">
+          <div class="card shadow" >
+            <div class="card-body">
+              <small class="mb-0 text-muted">Course</small>
+              <p class="mb-1">{{userprof.user_course}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 ">
+          <div class="card shadow" >
+            <div class="card-body">
+              <small class="mb-0 text-muted">Major</small>
+              <p class="mb-1">Not Applicable</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Basic Profile -->
+      <div class="row mt-3">
+        <div class="col-lg-11">
+          <div class="card shadow ">
+            <div class="card-body" >
+              <div class="card-text">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <p class="text-muted mb-0">First Name</p>
+                  <p class="mb-2 ">{{userprof.user_fname}}</p>
+                </div>
+                <div>
+                  <p class="text-muted mb-0">Middle Name</p>
+                  <p class="mb-2 ">{{userprof.user_mname}}</p>
+                </div><div>
+                  <p class="text-muted mb-0">Last Name</p>
+                  <p class="mb-2 ">{{userprof.user_lname}}</p>
+                </div>
+                
+              </div>
+              </div>      
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-lg-11">
+          <div class="card shadow mb-3">
+            <div class="card-body" >
+              <div class="card-text">
+                <small class="mb-0 text-muted text-start">Address</small> 
+                <p class="mb-1 text-start">{{ userprof.user_address }} </p>         
+                <small class="mb-0 text-muted text-start">Contact Number</small> 
+                <p class="mb-1 text-start">{{ userprof.user_cnumber }}  </p>  
+                <small class="mb-0 text-muted text-start">E-mail</small> 
+                <p class="mb-1 text-start">{{ user.email }} </p>         
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!--OFF CANVAS SIDEBAR
+<div class="offcanvas offcanvas-end" tabindex="-1" id="sidebarMenu" aria-labelledby="offcanvasRightLabel" style="width: 300px;">
+  <div class="offcanvas-header">
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#my-offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="d-flex flex-column" style="height: 90vh;">
+      <ul class="nav nav-pills flex-column mb-auto" id="sidebar-tab"  role="tablist" aria-orientation="vertical">
+        <li class="nav-item mb-1">  
+          
+            <a class="nav-link d-flex justify-content-between active" aria-current="page" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#profile" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+            Student Profile                
+            </a>
+        </li>
+        <li class="nav-item mb-1">
+            <a class="nav-link"  id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#borrow" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+              Student Advising
+            </a>
+        </li>
+        <li class="nav-item mb-1"> 
+            <a class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#schedule" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+              Logout
+            </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+-->
+
+
+
+<div class="bg-success text-white">
+  <text> Copyright 2022. All Rights Reserved </text> 
+ </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</body>
+</html>

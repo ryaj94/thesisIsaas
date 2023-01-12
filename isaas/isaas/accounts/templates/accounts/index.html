@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+   <!--Bootsrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link  rel="stylesheet" href="{% static 'css/style.css'%}">
+    <title>Intelligent Student Advising</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <!--Login Form-->
+    <div class="container">
+        <div class="row justify-content-center align-items-center inner-row">
+            <div class="col-lg-5 col-md-7">
+                <div class="form-box login-form p-5">
+                    <div class="form-title">
+                        {% for message in messages %}   
+
+                            <h3 class="formcontrol text-center text-white">{{message}}</h3>
+                        {% endfor %}
+
+                        <h4 class="fw-m mb-3 text-center text-white">Intelligent Student Academic Advising System using Machine Learning</h4>
+                    </div>
+                    <form method="Post">
+                        {% csrf_token %}
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control form-control-sm" placeholder="StudentNo." id="username" name="username">
+                            <label for="username">Enter Student No.</label>
+
+                        </div>
+                        <div class="form-floating mb-2 ">
+                            <input type="password" class="form-control form-control-sm" placeholder="Password" id="password" name="password">
+                            <label for="password">Enter Password</label>
+                        </div>
+                        <div class="form-group">
+                            <div class="d-grid gap-1">
+                                <input type="submit" class="btn btn-dark mt-3 text-decoration-none text-white" value="Login">
+                        </div>
+                        <div class="form-group">
+                            <div class="d-grid gap-1">
+                                <a class="btn btn-dark mt-3 text-decoration-none text-white" href="registeruser" >Register</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End of Login Form-->
+
+       <!--Registration Form
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center inner-row">
+            <div class="col-lg-4 col-md-7">
+             <div class="form-box registration-form p-5">
+                   <div class="form-title">
+                     <h4 class="mb-3 text-center">Create your account</h4>
+                    </div>
+                <form action="" >
+                     <div class="form-floating mb-2">
+                         <input type="text" class="form-control form-control-s" placeholder="StudentNo." id="floatingInput">
+                         <label for="floatingInput">School ID No.</label>
+                     </div>
+                     <div class="form-floating mb-2">
+                         <input type="text" class="form-control form-control-sm" placeholder="FirstName" id="floatingInput">
+                         <label for="floatingInput">First Name</label>
+                     </div>
+                     <div class="form-floating mb-2">
+                         <input type="text" class="form-control form-control-sm" placeholder="MiddleName" id="floatingInput">
+                         <label for="floatingInput">Middle Name</label>
+                     </div>
+                     <div class="form-floating mb-2">
+                         <input type="text" class="form-control form-control-sm" placeholder="LastName" id="floatingInput">
+                         <label for="floatingInput">Last Name</label>
+                     </div>
+                     <div class="form-floating mb-2">
+                         <input type="text" class="form-control form-control-sm" placeholder="Address" id="floatingInput">
+                         <label for="floatingInput">Address</label>
+                     </div>
+                     <div class="form-floating mb-2">
+                         <input type="text" class="form-control form-control-sm" placeholder="MiddleName" id="floatingInput">
+                         <label for="floatingInput">Email</label>
+                     </div>
+                     <div class="form-floating mb-2 ">
+                         <input type="password" class="form-control form-control-sm" placeholder="Password" id="floatingPassword">
+                         <label for="floatingPassword">Password</label>
+                     </div>
+                     <div class="form-floating mb-2 ">
+                         <input type="password" class="form-control form-control-sm" placeholder="Password" id="floatingPassword">
+                         <label for="floatingPassword">Confirm Password</label>
+                     </div>
+                     <div class="form-group">
+                         <div class="d-grid gap-1">
+                            <button class="btn btn-dark mt-3 login-show">Sign Up</button>
+                         </div>
+                     </div>
+                     <div class="d-grid gap-1">
+                        <button class="btn bg-transparent mt-3 Register-show">Cancel</button>
+                     </div>
+                 </form>
+             </div>
+         </div>
+     </div>
+ </div>
+        End of registration Form-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
+      integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script>
+        $('.Register-show').click(function(){ 
+        
+            
+            $('.login-form').hide();
+            $('.registration-form').show();
+         
+        });
+    
+        $('.loginform-show').click(function(){        
+           
+            $('.login-form').show();
+            $('.registration-form').hide();
+        });
+    </script>
+    <script>
+        $('#classModal').modal('show')
+    </script>
+        
+</body>
+</html>
