@@ -114,6 +114,363 @@
                 <small class="mb-0 text-muted text-start">E-mail</small> 
                 <p class="mb-1 text-start">{{ user.email }} </p>         
               </div>
+              <small class="mb-0 text-muted text-start">Student Grades</small> 
+              <div>
+                <form method="POST">
+                  {% csrf_token %}          
+                      <div class="row mt-3">
+                          <div class="col-lg-11">
+                              <div class="card shadow mb-1">
+                                  <div class="card-body" >
+                                      <div class="card-text">
+                                      <!--FIRST YEAR FIRST SEM-->
+                                          <table class="table table-hover">
+                                              <thead>
+                                              <tr class="text-success">
+                                                  <th scope="col" >Course Code</th>
+                                                  <th scope="col">Course Title</th>
+                                                  <th scope="col">Units</th>
+                                                  <th scope="col">Grades</th>
+                                              </tr>
+                                              </thead>
+                                              <tbody>
+                                              <tr>
+                                                  <th scope="row">GNED 02</th>
+                                                  <td>Ethics</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.gned02}}</td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">GNED 05</th>
+                                                  <td>Purposive Communication</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.gned05}}</td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">GNED 11</th>
+                                                  <td>Kontekstwalisadong Komunikasyon sa Filipino</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.gned11}}</td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">COSC 50</th>
+                                                  <td>Discrete Structure</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.cosc50}}</td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">DCIT 21</th>
+                                                  <td>Introduction to Computing</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.dcit21}}</td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">DCIT 22</th>
+                                                  <td>Computer Programming I</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.dcit22}}</td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">FITT 1</th>
+                                                  <td>Movement Enhancement</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.fitt1}}</td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">NSTP 1</th>
+                                                  <td>National Service Training Program 1</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.nstp1}}</td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">ORNT 1</th>
+                                                  <td>Institutional Orientation</td>
+                                                  <td>1.00</td>
+                                                  <td class="fw-bold">{{usergrade.ornt1}}</td>  
+                                              </tr>
+                                               <!--FIRST YEAR SECOND SEM-->
+                                            <tr>
+                                                <th scope="row">GNED 01</th>
+                                                <td>Arts Appreciation</td>
+                                                <td>3.00</td>
+                                                <td class="fw-bold">{{usergrade.gned01}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">GNED 06</th>
+                                                <td>Science, Technology, and Society</td>
+                                                <td>3.00</td>
+                                                <td class="fw-bold">{{usergrade.gned06}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">GNED 12</th>
+                                                <td>Dalumat Ng/Sa Filipino</td>
+                                                <td>3.00</td>
+                                                <td class="fw-bold">{{usergrade.gned12}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">GNED 03</th>
+                                                <td>Mathematics in the Modern World</td>
+                                                <td>3.00</td>
+                                                <td class="fw-bold">{{usergrade.gned03}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">DCIT 23</th>
+                                                <td>Computer Programming</td>
+                                                <td>3.00</td>
+                                                <td class="fw-bold">{{usergrade.dcit23}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">ITEC 50</th>
+                                                <td>Web Systems and Technologies 1</td>
+                                                <td>3.00</td>
+                                                <td class="fw-bold">{{usergrade.itec50}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">FITT 2</th>
+                                                <td>Fitness Exercise</td>
+                                                <td>2.00</td>
+                                                <td class="fw-bold">{{usergrade.fitt2}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">NSTP 2</th>
+                                                <td>National Service Training Program 2</td>
+                                                <td>3.00</td>
+                                                <td class="fw-bold">{{usergrade.nstp2}}</td>
+                                            </tr>
+                                             <!--SECOND YEAR FIRST SEM-->
+                                            <tr>
+                                              <th scope="row">GNED 04</th>
+                                              <td>Mga Babasahin Hinggil sa Kasaysayan ng Pilipinas</td>
+                                              <td>3.00</td>
+                                              <td class="fw-bold">{{usergrade.gned04}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">GNED 07</th>
+                                              <td>The Contemporary World</td>
+                                              <td>3.00</td>
+                                              <td class="fw-bold">{{usergrade.gned07}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">GNED 10</th>
+                                              <td>Gender and Society</td>
+                                              <td>3.00</td>
+                                              <td class="fw-bold">{{usergrade.gned10}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">GNED 14</th>
+                                              <td>Panitikang Panlipunan</td>
+                                              <td>3.00</td>
+                                              <td class="fw-bold">{{usergrade.gned14}}</td>
+                                              </tr>
+                                            <tr>
+                                              <th scope="row">ITEC 55</th>
+                                              <td>Platform Technologies</td>
+                                              <td>3.00</td>
+                                              <td class="fw-bold">{{usergrade.itec55}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">DCIT 24</th>
+                                              <td>Information Management</td>
+                                              <td>3.00</td>
+                                              <td class="fw-bold">{{usergrade.dcit24}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">DICT 50</th>
+                                              <td>Object Oriented Programming</td>
+                                              <td>3.00</td>
+                                              <td class="fw-bold">{{usergrade.dcit50}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th scope="row">FITT 3</th>
+                                              <td>Physical Activities towards Health and Fitness I</td>
+                                              <td>2.00</td>
+                                              <td class="fw-bold">{{usergrade.fitt3}}</td>
+                                            </tr>
+                                            <!--SECOND YEAR SECOND SEM-->
+                                            <tr>
+                                              <th scope="row">GNED 08</th>
+                                              <td>Understanding the Self</td>
+                                              <td>3.00</td>
+                                              <td class="fw-bold">{{usergrade.gned08}}</td>
+                                             </tr>
+                                              <tr>
+                                              <th scope="row">DCIT 25</th>
+                                              <td>Data Structures and Algorithms</td>
+                                              <td>3.00</td>
+                                              <td class="fw-bold">{{usergrade.dcit25}}</td>
+                                              </tr>
+                                              <tr>
+                                              <th scope="row">ITEC 60</th>
+                                              <td>Integrated Programming and Technologies 1</td>
+                                              <td>3.00</td>
+                                              <td class="fw-bold">{{usergrade.itec60}}</td>
+                                              </tr>
+                                              <tr>
+                                              <th scope="row">ITEC 65</th>
+                                              <td>Open Source Technology</td>
+                                              <td>3.00</td>
+                                              <td class="fw-bold">{{usergrade.itec65}}</td>
+                                             </tr>
+                                              <tr>
+                                              <th scope="row">DCIT 55</th>
+                                              <td>Advanced Database System</td>
+                                              <td>3.00</td>
+                                              <td class="fw-bold">{{usergrade.dcit55}}</td>
+                                              </tr>
+                                              <tr>
+                                              <th scope="row">ITEC 70</th>
+                                              <td>Multimedia Systems</td>
+                                              <td>3.00</td>
+                                              <td class="fw-bold">{{usergrade.itec70}}</td>
+                                              </tr>
+                                              <tr>
+                                              <th scope="row">FITT 4</th>
+                                              <td>Physical Activities towards Health and Fitness II</td>
+                                              <td>2.00</td>
+                                              <td class="fw-bold">{{usergrade.fitt4}}</td>
+                                              </tr>
+                                              <!--SECOND YEAR MIDYEAR-->   
+                                              <tr>
+                                                <th scope="row">STAT 2</th>
+                                                <td>Applied Statistics</td>
+                                                <td>3.00</td>
+                                                <td class="fw-bold">{{usergrade.stat2}}</td>
+                                                </tr>
+                                                <tr>
+                                                <th scope="row">ITEC 75</th>
+                                                <td>System Integration and Architecture 1</td>
+                                                <td>3.00</td>
+                                                <td class="fw-bold">{{usergrade.itec75}}</td>
+                                                </tr>
+                                                <!--THIRD YEAR FIRST SEM-->
+                                                <tr>
+                                                  <th scope="row">ITEC 80</th>
+                                                  <td>Introduction to Human Computer Interaction</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.itec80}}</td>
+                                                 </tr>
+                                                  <tr>
+                                                  <th scope="row">ITEC 85</th>
+                                                  <td>Information Assurance and Security 1</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.itec85}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                  <th scope="row">ITEC 90</th>
+                                                  <td>Network Fundamentals</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.itec90}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                  <th scope="row">INSY 55</th>
+                                                  <td>System Analysis and Design</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.insy55}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                  <th scope="row">DCIT 26</th>
+                                                  <td>Application Development and Emerging Technologies</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.dcit26}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                  <th scope="row">DCIT 60</th>
+                                                  <td>Methods of Research</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.dcit60}}</td>
+                                                 </tr>
+                                                 <!--THIRD YEAR SECOND SEM-->
+                                                 <tr>
+                                                  <th scope="row">GNED 09</th>
+                                                  <td>Rizal: Life, Works, and Writings</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.gned09}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                  <th scope="row">ITEC 95</th>
+                                                  <td>Quantitative Methods (Modeling & Simulation)</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.itec95}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                  <th scope="row">ITEC 101</th>
+                                                  <td>IT ELECTIVE 1 (Human Computer Interaction 2)</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.itec101}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                  <th scope="row">ITEC 106</th>
+                                                  <td>IT ELECTIVE 2 (Web System and Technologies 2)</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.itec106}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                  <th scope="row">ITEC 100</th>
+                                                  <td>Information Assurance and Security 2</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.itec100}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                  <th scope="row">ITEC 105</th>
+                                                  <td>Network Management</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.itec105}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                  <th scope="row">ITEC 200A</th>
+                                                  <td>Capstone Project and Research 1</td>
+                                                  <td>3.00</td>
+                                                  <td class="fw-bold">{{usergrade.itec200a}}</td>
+                                                  </tr>
+                                                   <!--FOURTH YEAR FIRST SEM-->
+                                                   <tr>
+                                                    <th scope="row">DCIT 65</th>
+                                                    <td>Social and Professional Issues</td>
+                                                    <td>3.00</td>
+                                                    <td class="fw-bold">{{usergrade.dcit65}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <th scope="row">ITEC 111</th>
+                                                    <td>IT ELECTIVE 3 (Integrated Programming and Technologies 2)</td>
+                                                    <td>3.00</td>
+                                                    <td class="fw-bold">{{usergrade.itec111}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <th scope="row">ITEC 116</th>
+                                                    <td>IT ELECTIVE 4 (Systems Integration and Architecture 2)</td>
+                                                    <td>3.00</td>
+                                                    <td class="fw-bold">{{usergrade.itec116}}</td>
+                                                   </tr>
+                                                    <tr>
+                                                    <th scope="row">ITEC 110</th>
+                                                    <td>Systems Administration and Maintenance</td>
+                                                    <td>3.00</td>
+                                                    <td class="fw-bold">{{usergrade.itec110}}</td>
+                                                   </tr>
+                                                    <tr>
+                                                    <th scope="row">ITEC 200B</th>
+                                                    <td>Capstone Project and Research 2</td>
+                                                    <td>3.00</td>
+                                                    <td class="fw-bold">{{usergrade.itec200b}}</td>
+                                                    </tr>
+                                                     <!--FOURTH YEAR SECOND SEM-->
+                                                     <tr>
+                                                      <th scope="row">ITEC 199</th>
+                                                      <td>Practicum (Minimum 486 Hours)</td>
+                                                      <td>6.00</td>
+                                                      <td class="fw-bold">{{usergrade.itec199}}</td>
+                                                     </tr>
+                                              </tbody>
+                                          </table>
+                                      </div>      
+                                  </div>
+                              </div>
+                              <!--end of subject table-->
+                          </div>
+                          <!--INPUT of GRADES-->
+                          <div class="col-md-3">                 
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -121,6 +478,11 @@
     </main>
   </div>
 </div>
+
+
+
+
+
 
 <!--OFF CANVAS SIDEBAR
 <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebarMenu" aria-labelledby="offcanvasRightLabel" style="width: 300px;">
