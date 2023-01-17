@@ -20,7 +20,16 @@ from .forms import CreateUserForm
 @student_only
 def home(request):
     userprof = request.user.studentprof
-    context = {'userprof': userprof}
+    usergrade = request.user.studentgrades
+    usergrade1 = request.user.fy2ndsem
+    usergrade2 = request.user.sy1stsem
+    usergrade3 = request.user.sy2ndsem
+    usergrade4 = request.user.sysummer
+    usergrade5 = request.user.ty1stsem
+    usergrade6 = request.user.ty2ndsem
+    usergrade7 = request.user.fy1stsem
+    usergrade8 = request.user.fry2ndsem
+    context = {'userprof': userprof, 'usergrade': usergrade, 'usergrade1': usergrade1, 'usergrade2': usergrade2, 'usergrade3': usergrade3, 'usergrade4': usergrade4, 'usergrade5': usergrade5, 'usergrade6': usergrade6, 'usergrade7': usergrade7, 'usergrade8': usergrade8,}
     return render(request, 'accounts/StudentProfile.html' , context)
 
 @login_required(login_url='loginPage')
@@ -68,15 +77,17 @@ def studadvise(request):
          usergrade = request.user.fy1stsem
          arr=[[312,usergrade1.itec85], [315,usergrade1.dcit26]]    
          rows, cols = (2, 2)
+    else:
+        row = 0
 
-
-
+        if row == 0:
+            return redirect("home")
+            
     subj=[]
     for f in range(rows):
         subj.append(model.predict([arr[f]]))
 
-    print(subj)
-
+    
     context = {'usergrade': usergrade, 'userprof': userprof1, 'subj':subj }
     return render(request, 'accounts/student advising.html', context )
 
@@ -91,8 +102,19 @@ def viewstudents(request):
 
 
 def studentinfo(request, pk):
-    studinfo = studentprof.objects.get(id=pk)
-    context = {'studinfo': studinfo}
+    studinfo = studentprof.objects.get(user__username=pk)
+    studgrade = studentgrades.objects.get(user__username=pk)
+    studgrade1 = fy2ndsem.objects.get(user__username=pk)
+    studgrade2 = sy1stsem.objects.get(user__username=pk)
+    studgrade3 = sy2ndsem.objects.get(user__username=pk)
+    studgrade4 = sysummer.objects.get(user__username=pk)
+    studgrade5 = ty1stsem.objects.get(user__username=pk)
+    studgrade6 = ty2ndsem.objects.get(user__username=pk)
+    studgrade7 = fy1stsem.objects.get(user__username=pk)
+    studgrade8 = fry2ndsem.objects.get(user__username=pk)
+
+    print(studgrade.gned02)
+    context = {'studinfo': studinfo,'studgrade': studgrade, 'studgrade1': studgrade1, 'studgrade2': studgrade2, 'studgrade3': studgrade3, 'studgrade4': studgrade4, 'studgrade5': studgrade5, 'studgrade6': studgrade6, 'studgrade7': studgrade7, 'studgrade8': studgrade8 }
     return render(request, 'accounts/StudentInformation.html', context)
 
 def adviserpro2(request):
@@ -109,14 +131,11 @@ def registeruser(request):
         if form.is_valid(): 
             user = form.save()
             username = form.cleaned_data.get('username')
-
-            group = Group.objects.get(name='student')
-            user.groups.add(group)
-            studentprof.objects.create(
-                user=user
-            )
+   
             messages.success(request, "Account successfuly created for "+ username)
-            return redirect("home")
+            return redirect("loginPage")
+
+
 
     context = {'form': form}
     return render(request, 'accounts/regform.html', context)

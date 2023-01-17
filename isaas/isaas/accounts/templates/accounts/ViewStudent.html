@@ -114,7 +114,7 @@
                                     <td>{{profs.user_yrandsec}}</td>
                                     <td class="text-transform: uppercase;">{{profs.user_lname}}, {{profs.user_fname}} {{profs.user_mname}}</td>
                                     <td>REGULAR</td>
-                                    <td class="text-success"> <a href="{% url 'studentinfo' profs.id %}" class="text-decoration-none text-success"> VIEW</a></td>
+                                    <td class="text-success"> <a href="{% url 'studentinfo' profs.user %}" class="text-decoration-none text-success"> VIEW</a></td>
                                   </tr>
                                   {% endfor %}
                                 </tbody>

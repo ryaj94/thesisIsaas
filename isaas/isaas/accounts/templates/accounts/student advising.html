@@ -595,7 +595,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Course to be taken</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body ">
@@ -984,12 +984,25 @@
                                                     <tbody>
                                                         {% if subj.0 == 'itec100' %}
                                                             {% if subj.1 == 'itec199' %}
-                                                            <tr>
-                                                            <th scope="row">ITEC 199</th>
-                                                            <td>Practicum (Minimum 486 Hours)</td>
-                                                            <td>6.00</td>
-                                                            </tr>
-                                                            {% endif %}
+                                                                <tr>
+                                                                <th scope="row">ITEC 199</th>
+                                                                <td>Practicum (Minimum 486 Hours)</td>
+                                                                <td>6.00</td>
+                                                                </tr>
+                                                                {% else %}
+                                                                    <tr class="bg-danger">
+                                                                    <th scope="row">ITEC 199</th>
+                                                                    <td>Practicum (Minimum 486 Hours)</td>
+                                                                    <td>6.00</td>
+                                                                </tr>
+                                                                {% endif %}
+                                                            {% else %}
+                                                                <tr class="bg-danger">
+                                                                <th scope="row">ITEC 199</th>
+                                                                <td>Practicum (Minimum 486 Hours)</td>
+                                                                <td>6.00</td>
+                                                                </tr>
+
                                                         {% endif %}
                                                     </tbody>
                                                     </table>
