@@ -627,11 +627,13 @@
                                                             </tr>
                                                             {% if subj.0 == 'gned12' %}
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}
                                                                 <th scope="row">GNED 12</th>
                                                                 <td>Dalumat Ng/Sa Filipino</td>
                                                                 <td>3.00</td>
                                                             </tr>
-                                                            {% endif %}
                                                             <tr>
                                                                 <th scope="row">GNED 03</th>
                                                                 <td>Mathematics in the Modern World</td>
@@ -639,18 +641,23 @@
                                                             </tr>
                                                             {% if subj.1 == 'itec50' %}
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}
                                                                 <th scope="row">ITEC 50</th>
                                                                 <td>Web Systems and Technologies 1</td>
                                                                 <td>3.00</td>
                                                             </tr>
-                                                            {% endif %}
+                                                            
                                                             {% if subj.2 == 'dcit23' %}
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}   
                                                                 <th scope="row">DCIT 23</th>
                                                                 <td>Computer Programming</td>
                                                                 <td>3.00</td>
                                                             </tr>
-                                                            {% endif %}
                                                             <tr>
                                                                 <th scope="row">FITT 2</th>
                                                                 <td>Fitness Exercise</td>
@@ -693,11 +700,13 @@
                                                             </tr>
                                                             {% if subj.1 == 'gned14' %}
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}
                                                                 <th scope="row">GNED 14</th>
                                                                 <td>Panitikang Panl</td>
                                                                 <td>3.00</td>
                                                             </tr>
-                                                            {% endif %}
                                                             {% if subj.0 == 'dcit24,dcit50,itec55' %}
                                                             <tr>
                                                                 <th scope="row">ITEC 55</th>
@@ -710,6 +719,22 @@
                                                                 <td>3.00</td>
                                                             </tr>
                                                             <tr>
+                                                                <th scope="row">DICT 50</th>
+                                                                <td>Object Oriented Programming</td>
+                                                                <td>3.00</td>
+                                                            </tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                                <th scope="row">ITEC 55</th>
+                                                                <td>Platform Technologies</td>
+                                                                <td>3.00</td>
+                                                            </tr>
+                                                            <tr class="bg-danger">
+                                                                <th scope="row">DCIT 24</th>
+                                                                <td>Information Management</td>
+                                                                <td>3.00</td>
+                                                            </tr>
+                                                            <tr class="bg-danger">
                                                                 <th scope="row">DICT 50</th>
                                                                 <td>Object Oriented Programming</td>
                                                                 <td>3.00</td>
@@ -742,20 +767,27 @@
                                                             </tr>
                                                             {%if subj.2 == 'dcit25,itec60'%}
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}    
                                                                 <th scope="row">DCIT 25</th>
                                                                 <td>Data Structures and Algorithms</td>
                                                                 <td>3.00</td>
                                                             </tr>
-                                                            {% endif %}
                                                             {% if subj.1 == 'itec60'%}
                                                                 {% if subj.2 == 'dcit25,itec60' %}
                                                                 <tr>
+                                                                {% else %}
+                                                                <tr class="bg-danger">
+                                                                {% endif %}
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}    
                                                                     <th scope="row">ITEC 60</th>
                                                                     <td>Integrated Programming and Technologies 1</td>
                                                                     <td>3.00</td>
                                                                 </tr>
-                                                                {%endif%}
-                                                            {% endif %}
+                                                               
                                                             <tr>
                                                                 <th scope="row">ITEC 65</th>
                                                                 <td>Open Source Technology</td>
@@ -763,11 +795,14 @@
                                                             </tr>
                                                             {% if subj.0 == 'dcit55' %}
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}    
                                                                 <th scope="row">DCIT 55</th>
                                                                 <td>Advanced Database System</td>
                                                                 <td>3.00</td>
                                                             </tr>
-                                                            {% endif %}
+                                                            
                                                             <tr>
                                                                 <th scope="row">ITEC 70</th>
                                                                 <td>Multimedia Systems</td>
@@ -800,11 +835,14 @@
                                                             </tr>
                                                             {% if subj.0 == 'itec75' %}
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}
                                                             <th scope="row">ITEC 75</th>
                                                             <td>System Integration and Architecture 1</td>
                                                             <td>3.00</td>
                                                             </tr>
-                                                            {% endif %}
+                                                           
                                                         </tbody>
                                                     </table>
                                                     <!--THIRD YEAR FIRST SEM-->
@@ -826,18 +864,24 @@
                                                             </tr>
                                                             {% if subj.0 == 'itec85' %}
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}    
                                                             <th scope="row">ITEC 85</th>
                                                             <td>Information Assurance and Security 1</td>
                                                             <td>3.00</td>
                                                             </tr>
-                                                            {%endif%}
+                                                            
                                                             {% if subj.2 == 'itec90' %}
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}   
                                                             <th scope="row">ITEC 90</th>
                                                             <td>Network Fundamentals</td>
                                                             <td>3.00</td>
                                                             </tr>
-                                                            {% endif %}
+                                                            
                                                             <tr>
                                                             <th scope="row">INSY 55</th>
                                                             <td>System Analysis and Design</td>
@@ -845,11 +889,14 @@
                                                             </tr>
                                                             {% if subj.1 == 'dcit26'%}
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}
                                                             <th scope="row">DCIT 26</th>
                                                             <td>Application Development and Emerging Technologies</td>
                                                             <td>3.00</td>
                                                             </tr>
-                                                            {% endif %}
+                                                            
                                                             <tr>
                                                             <th scope="row">DCIT 60</th>
                                                             <td>Methods of Research</td>
@@ -876,18 +923,24 @@
                                                             </tr>
                                                             {% if subj.5 == 'itec95' %}
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}
                                                             <th scope="row">ITEC 95</th>
                                                             <td>Quantitative Methods (Modeling & Simulation)</td>
                                                             <td>3.00</td>
                                                             </tr>
-                                                            {% endif %}
+                                                            
                                                             {% if subj.0 == 'itec101' %}
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}
                                                             <th scope="row">ITEC 101</th>
                                                             <td>IT ELECTIVE 1 (Human Computer Interaction 2)</td>
                                                             <td>3.00</td>
                                                             </tr>
-                                                            {% endif %}
+                                                            
                                                             <tr>
                                                             <th scope="row">ITEC 106</th>
                                                             <td>IT ELECTIVE 2 (Web System and Technologies 2)</td>
@@ -895,29 +948,42 @@
                                                             </tr>
                                                             {% if subj.1 == 'itec100' %}
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}
                                                             <th scope="row">ITEC 100</th>
                                                             <td>Information Assurance and Security 2</td>
                                                             <td>3.00</td>
                                                             </tr>
-                                                            {% endif %}
+                                                        
                                                             {% if subj.2 == 'itec105' %}
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}    
                                                             <th scope="row">ITEC 105</th>
                                                             <td>Network Management</td>
                                                             <td>3.00</td>
                                                             </tr>
-                                                            {% endif %}
+                                                            
                                                             {% if subj.1 == 'itec100' %}
                                                                 {% if subj.3 == 'itec199' %}
                                                                     {% if subj.4 == 'itec200a' %}
                                                                     <tr>
+                                                                    {% else %}
+                                                                    <tr class="bg-danger">
+                                                                    {% endif %}
+                                                                {% else %}
+                                                                <tr class="bg-danger">
+                                                                {% endif %}
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}            
                                                                     <th scope="row">ITEC 200A</th>
                                                                     <td>Capstone Project and Research 1</td>
                                                                     <td>3.00</td>
                                                                     </tr>
-                                                                    {% endif %}
-                                                                {% endif %}
-                                                            {% endif %}
+                                                           
                                                         </tbody>
                                                     </table>
                                                     <!--FOURTH YEAR FIRST SEM-->
@@ -939,32 +1005,43 @@
                                                         </tr>
                                                         {% if subj.0 == 'itec75' %}
                                                         <tr>
+                                                        {% else %}
+                                                        <tr class="bg-danger">
+                                                        {% endif %}
                                                             <th scope="row">ITEC 111</th>
                                                             <td>IT ELECTIVE 3 (Integrated Programming and Technologies 2)</td>
                                                             <td>3.00</td>
                                                         </tr>
-                                                        {% endif %}
                                                         {% if subj.1 == 'itec85' %}
                                                         <tr>
+                                                        {% else %}
+                                                        <tr class="bg-danger">
+                                                        {% endif %}    
                                                             <th scope="row">ITEC 116</th>
                                                             <td>IT ELECTIVE 4 (Systems Integration and Architecture 2)</td>
                                                             <td>3.00</td>
                                                         </tr>
-                                                        {% endif %}
+                                                        
                                                         {% if subj.2 == 'itec110' %}
                                                         <tr>
+                                                        {% else %}
+                                                        <tr class="bg-danger">
+                                                        {% endif %}    
                                                             <th scope="row">ITEC 110</th>
                                                             <td>Systems Administration and Maintenance</td>
                                                             <td>3.00</td>
                                                         </tr>
-                                                        {% endif %}
+                                                        
                                                         {% if subj.3 == 'itec200b' %}
                                                         <tr>
+                                                        {% else %}
+                                                        <tr class="bg-danger">
+                                                        {% endif %}    
                                                             <th scope="row">ITEC 200B</th>
                                                             <td>Capstone Project and Research 2</td>
                                                             <td>3.00</td>
                                                         </tr>
-                                                        {% endif %}
+                                                        
                                                         </tbody>
                                                     </table>
                                                     <!--FOURTH YEAR SECOND SEM-->
