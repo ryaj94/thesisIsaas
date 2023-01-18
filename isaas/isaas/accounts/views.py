@@ -92,6 +92,30 @@ def studadvise(request):
     return render(request, 'accounts/student advising.html', context )
 
 
+def gradesupdate(request, pk):
+     studgrade = studentgrades.objects.get(user__username=pk)
+     studgrade1 = fy2ndsem.objects.get(user__username=pk)
+     studgrade2 = sy1stsem.objects.get(user__username=pk)
+     studgrade3 = sy2ndsem.objects.get(user__username=pk)
+     studgrade4 = sysummer.objects.get(user__username=pk)
+     studgrade5 = ty1stsem.objects.get(user__username=pk)
+     studgrade6 = ty2ndsem.objects.get(user__username=pk)
+     studgrade7 = fy1stsem.objects.get(user__username=pk)
+     studgrade8 = fry2ndsem.objects.get(user__username=pk)
+    
+     if request.method == "POST":
+        gned02 = request.POST['gned02']
+        gned01 = request.POST['gned01']
+
+        update_customer=studentgrades.objects.filter(user__username=pk).update(gned02=gned02)
+
+        print("update query set: ",update_customer)
+
+        context = {}
+        return render(request, 'accounts/StudentInformation.html', {})
+
+
+
 def viewstudents(request):
     studentprofs = studentprof.objects.all()
     print(studentprofs)
@@ -113,7 +137,80 @@ def studentinfo(request, pk):
     studgrade7 = fy1stsem.objects.get(user__username=pk)
     studgrade8 = fry2ndsem.objects.get(user__username=pk)
 
-    print(studgrade.gned02)
+    if request.method == "POST":
+        gned02 = request.POST['gned02']
+        gned05 = request.POST['gned05']
+        gned11 = request.POST['gned11']
+        cosc50 = request.POST['cosc50'] 
+        dcit21 = request.POST['dcit21']
+        dcit22 = request.POST['dcit22']
+        fitt1 = request.POST['fitt1']
+        nstp1 = request.POST['nstp1']
+        ornt1 = request.POST['ornt1']
+        #first year 2nd sem
+        gned01 = request.POST['gned01']
+        gned06 = request.POST['gned06']
+        gned12 = request.POST['gned12']
+        gned03 = request.POST['gned03']
+        itec50 = request.POST['itec50']
+        dcit23 = request.POST['dcit23']
+        fitt2 = request.POST['fitt2']
+        nstp2 = request.POST['nstp2']
+        #second year 1st sem
+        gned04 = request.POST['gned04']
+        gned07 = request.POST['gned07']
+        gned10 = request.POST['gned10']
+        gned14 = request.POST['gned14']
+        itec55 = request.POST['itec55']
+        dcit24 = request.POST['dcit24']
+        dcit50 = request.POST['dcit50']
+        fitt3 = request.POST['fitt3']
+        #second year 2nd sem
+        gned08 = request.POST['gned08']
+        dcit25 = request.POST['dcit25']
+        itec60 = request.POST['itec60']
+        itec65 = request.POST['itec65']
+        dcit55 = request.POST['dcit55']
+        itec70 = request.POST['itec70']
+        fitt4 = request.POST['fitt4']
+        #second year summer
+        stat2 = request.POST['stat2']
+        itec75 = request.POST['itec75']
+        #third year 1st sem
+        itec80 = request.POST['itec80']
+        itec85 = request.POST['itec85']
+        itec90 = request.POST['itec90']
+        insy55 = request.POST['insy55']
+        dcit26 = request.POST['dcit26']
+        dcit60 = request.POST['dcit60']
+        #third year 2nd sem
+        gned09 = request.POST['gned09']
+        itec95 = request.POST['itec95']
+        itec101 = request.POST['itec101']
+        itec106 = request.POST['itec106']
+        itec100 = request.POST['itec100']
+        itec105 = request.POST['itec105']
+        itec200a = request.POST['itec200a']
+        #fourth year 1st sem
+        dcit65 = request.POST['dcit65']
+        itec111 = request.POST['itec111']
+        itec116 = request.POST['itec116']
+        itec110 = request.POST['itec110']
+        itec200b = request.POST['itec200b']
+        #fourth year 2nd sem
+        itec199 = request.POST['itec199']
+
+
+        studentgrades.objects.filter(user__username=pk).update(gned02=gned02,gned05=gned05,gned11=gned11,cosc50=cosc50,dcit21=dcit21,dcit22=dcit22,fitt1=fitt1,nstp1=nstp1,ornt1=ornt1)
+        fy2ndsem.objects.filter(user__username=pk).update(gned01=gned01,gned06=gned06,gned12=gned12,gned03=gned03,itec50=itec50,dcit23=dcit23,fitt2=fitt2,nstp2=nstp2)
+        sy1stsem.objects.filter(user__username=pk).update(gned04=gned04,gned07=gned07,gned10=gned10,gned14=gned14,itec55=itec55,dcit24=dcit24,dcit50=dcit50,fitt3=fitt3)
+        sy2ndsem.objects.filter(user__username=pk).update(gned08=gned08,dcit25=dcit25,itec60=itec60,itec65=itec65,dcit55=dcit55,itec70=itec70,fitt4=fitt4)
+        sysummer.objects.filter(user__username=pk).update(stat2=stat2,itec75=itec75)
+        ty1stsem.objects.filter(user__username=pk).update(itec80=itec80,itec85=itec85,itec90=itec90,insy55=insy55,dcit26=dcit26,dcit60=dcit60)
+        ty2ndsem.objects.filter(user__username=pk).update(gned09=gned09,itec95=itec95,itec101=itec101,itec106=itec106,itec100=itec100,itec105=itec105,itec200a=itec200a)
+        fy1stsem.objects.filter(user__username=pk).update(dcit65=dcit65,itec111=itec111,itec116=itec116,itec110=itec110,itec200b=itec200b)
+        fry2ndsem.objects.filter(user__username=pk).update(itec199=itec199)
+        
     context = {'studinfo': studinfo,'studgrade': studgrade, 'studgrade1': studgrade1, 'studgrade2': studgrade2, 'studgrade3': studgrade3, 'studgrade4': studgrade4, 'studgrade5': studgrade5, 'studgrade6': studgrade6, 'studgrade7': studgrade7, 'studgrade8': studgrade8 }
     return render(request, 'accounts/StudentInformation.html', context)
 

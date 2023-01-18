@@ -131,7 +131,7 @@
               </div>
             </div>
           </div>
-          <form method="POST">
+          <form method="POST" >
             {% csrf_token %}          
                 <div class="row mt-3">
                     <div class="col-lg-11">
@@ -153,153 +153,153 @@
                                             <th scope="row">GNED 02</th>
                                             <td>Ethics</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade.gned02}}</td>
+                                            <td class="fw-bold"><input type="text" name="gned02" value="{{studgrade.gned02}}"></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">GNED 05</th>
                                             <td>Purposive Communication</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade.gned05}}</td>
+                                            <td class="fw-bold"><input type="text" name="gned05" value="{{studgrade.gned05}}"></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">GNED 11</th>
                                             <td>Kontekstwalisadong Komunikasyon sa Filipino</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade.gned11}}</td>
+                                            <td class="fw-bold"><input type="text" name="gned11" value="{{studgrade.gned11}}"></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">COSC 50</th>
                                             <td>Discrete Structure</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade.cosc50}}</td>
+                                            <td class="fw-bold"><input type="text" name="cosc50" value="{{studgrade.cosc50}}"></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">DCIT 21</th>
                                             <td>Introduction to Computing</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade.dcit21}}</td>
+                                            <td class="fw-bold"><input type="text" name="dcit21" value="{{studgrade.dcit21}}"></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">DCIT 22</th>
                                             <td>Computer Programming I</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade.dcit22}}</td>
+                                            <td class="fw-bold"><input type="text" name="dcit22" value="{{studgrade.dcit22}}"></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">FITT 1</th>
                                             <td>Movement Enhancement</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade.fitt1}}</td>
+                                            <td class="fw-bold"><input type="text" name="fitt1" value="{{studgrade.fitt1}}"></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">NSTP 1</th>
                                             <td>National Service Training Program 1</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade.nstp1}}</td>
+                                            <td class="fw-bold"><input type="text" name="nstp1" value="{{studgrade.nstp1}}"></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">ORNT 1</th>
                                             <td>Institutional Orientation</td>
                                             <td>1.00</td>
-                                            <td class="fw-bold">{{studgrade.ornt1}}</td>  
+                                            <td class="fw-bold"><input type="text" name="ornt1" value="{{studgrade.ornt1}}"></td>  
                                         </tr>
                                          <!--FIRST YEAR SECOND SEM-->
                                       <tr>
                                           <th scope="row">GNED 01</th>
                                           <td>Arts Appreciation</td>
                                           <td>3.00</td>
-                                          <td class="fw-bold">{{studgrade1.gned01}}</td>
+                                          <td class="fw-bold"><input type="text" name="gned01" value="{{studgrade1.gned01}}"></td>
                                       </tr>
                                       <tr>
                                           <th scope="row">GNED 06</th>
                                           <td>Science, Technology, and Society</td>
                                           <td>3.00</td>
-                                          <td class="fw-bold">{{studgrade1.gned06}}</td>
+                                          <td class="fw-bold"><input type="text" name="gned06" value="{{studgrade1.gned06}}"></td>
                                       </tr>
                                       <tr>
                                           <th scope="row">GNED 12</th>
                                           <td>Dalumat Ng/Sa Filipino</td>
                                           <td>3.00</td>
-                                          <td class="fw-bold">{{studgrade1.gned12}}</td>
+                                          <td class="fw-bold"><input type="text" name="gned12" value="{{studgrade1.gned12}}"></td>
                                       </tr>
                                       <tr>
                                           <th scope="row">GNED 03</th>
                                           <td>Mathematics in the Modern World</td>
                                           <td>3.00</td>
-                                          <td class="fw-bold">{{studgrade1.gned03}}</td>
+                                          <td class="fw-bold"><input type="text" name="gned03" value="{{studgrade1.gned03}}"></td>
                                       </tr>
                                       <tr>
                                           <th scope="row">DCIT 23</th>
                                           <td>Computer Programming</td>
                                           <td>3.00</td>
-                                          <td class="fw-bold">{{studgrade1.dcit23}}</td>
+                                          <td class="fw-bold"><input type="text" name="dcit23" value="{{studgrade1.dcit23}}"></td>
                                       </tr>
                                       <tr>
                                           <th scope="row">ITEC 50</th>
                                           <td>Web Systems and Technologies 1</td>
                                           <td>3.00</td>
-                                          <td class="fw-bold">{{studgrade1.itec50}}</td>
+                                          <td class="fw-bold"><input type="text" name="itec50" value="{{studgrade1.itec50}}"></td>
                                       </tr>
                                       <tr>
                                           <th scope="row">FITT 2</th>
                                           <td>Fitness Exercise</td>
                                           <td>2.00</td>
-                                          <td class="fw-bold">{{studgrade1.fitt2}}</td>
+                                          <td class="fw-bold"><input type="text" name="fitt2" value="{{studgrade1.fitt2}}"></td>
                                       </tr>
                                       <tr>
                                           <th scope="row">NSTP 2</th>
                                           <td>National Service Training Program 2</td>
                                           <td>3.00</td>
-                                          <td class="fw-bold">{{studgrade1.nstp2}}</td>
+                                          <td class="fw-bold"><input type="text" name="nstp2" value="{{studgrade1.nstp2}}"></td>
                                       </tr>
                                        <!--SECOND YEAR FIRST SEM-->
                                       <tr>
                                         <th scope="row">GNED 04</th>
                                         <td>Mga Babasahin Hinggil sa Kasaysayan ng Pilipinas</td>
                                         <td>3.00</td>
-                                        <td class="fw-bold">{{studgrade2.gned04}}</td>
+                                        <td class="fw-bold"><input type="text" name="gned04" value="{{studgrade2.gned04}}"></td>
                                       </tr>
                                       <tr>
                                         <th scope="row">GNED 07</th>
                                         <td>The Contemporary World</td>
                                         <td>3.00</td>
-                                        <td class="fw-bold">{{studgrade2.gned07}}</td>
+                                        <td class="fw-bold"><input type="text" name="gned07" value="{{studgrade2.gned07}}"></td>
                                       </tr>
                                       <tr>
                                         <th scope="row">GNED 10</th>
                                         <td>Gender and Society</td>
                                         <td>3.00</td>
-                                        <td class="fw-bold">{{studgrade2.gned10}}</td>
+                                        <td class="fw-bold"><input type="text" name="gned10" value="{{studgrade2.gned10}}"></td>
                                       </tr>
                                       <tr>
                                         <th scope="row">GNED 14</th>
                                         <td>Panitikang Panlipunan</td>
                                         <td>3.00</td>
-                                        <td class="fw-bold">{{studgrade2.gned14}}</td>
+                                        <td class="fw-bold"><input type="text" name="gned14" value="{{studgrade2.gned14}}"></td>
                                         </tr>
                                       <tr>
                                         <th scope="row">ITEC 55</th>
                                         <td>Platform Technologies</td>
                                         <td>3.00</td>
-                                        <td class="fw-bold">{{studgrade2.itec55}}</td>
+                                        <td class="fw-bold"><input type="text" name="itec55" value="{{studgrade2.itec55}}"></td>
                                       </tr>
                                       <tr>
                                         <th scope="row">DCIT 24</th>
                                         <td>Information Management</td>
                                         <td>3.00</td>
-                                        <td class="fw-bold">{{studgrade2.dcit24}}</td>
+                                        <td class="fw-bold"><input type="text" name="dcit24" value="{{studgrade2.dcit24}}"></td>
                                       </tr>
                                       <tr>
                                         <th scope="row">DICT 50</th>
                                         <td>Object Oriented Programming</td>
                                         <td>3.00</td>
-                                        <td class="fw-bold">{{studgrade2.dcit50}}</td>
+                                        <td class="fw-bold"><input type="text" name="dcit50" value="{{studgrade2.dcit50}}"></td>
                                       </tr>
                                       <tr>
                                         <th scope="row">FITT 3</th>
                                         <td>Physical Activities towards Health and Fitness I</td>
                                         <td>2.00</td>
-                                        <td class="fw-bold">{{studgrade2.fitt3}}</td>
+                                        <td class="fw-bold"><input type="text" name="fitt3" value="{{studgrade2.fitt3}}"></td>
                                       
                                       </tr>
                                       <!--SECOND YEAR SECOND SEM-->
@@ -307,184 +307,189 @@
                                         <th scope="row">GNED 08</th>
                                         <td>Understanding the Self</td>
                                         <td>3.00</td>
-                                        <td class="fw-bold">{{studgrade3.gned08}}</td>
+                                        <td class="fw-bold"><input type="text" name="gned08" value="{{studgrade3.gned08}}"></td>
                                        </tr>
                                         <tr>
                                         <th scope="row">DCIT 25</th>
                                         <td>Data Structures and Algorithms</td>
                                         <td>3.00</td>
-                                        <td class="fw-bold">{{studgrade3.dcit25}}</td>
+                                        <td class="fw-bold"><input type="text" name="dcit25" value="{{studgrade3.dcit25}}"></td>
                                         </tr>
                                         <tr>
                                         <th scope="row">ITEC 60</th>
                                         <td>Integrated Programming and Technologies 1</td>
                                         <td>3.00</td>
-                                        <td class="fw-bold">{{studgrade3.itec60}}</td>
+                                        <td class="fw-bold"><input type="text" name="itec60" value="{{studgrade3.itec60}}"></td>
                                         </tr>
                                         <tr>
                                         <th scope="row">ITEC 65</th>
                                         <td>Open Source Technology</td>
                                         <td>3.00</td>
-                                        <td class="fw-bold">{{studgrade3.itec65}}</td>
+                                        <td class="fw-bold"><input type="text" name="itec65" value="{{studgrade3.itec65}}"></td>
                                        </tr>
                                         <tr>
                                         <th scope="row">DCIT 55</th>
                                         <td>Advanced Database System</td>
                                         <td>3.00</td>
-                                        <td class="fw-bold">{{studgrade3.dcit55}}</td>
+                                        <td class="fw-bold"><input type="text" name="dcit55" value="{{studgrade3.dcit55}}"></td>
                                         </tr>
                                         <tr>
                                         <th scope="row">ITEC 70</th>
                                         <td>Multimedia Systems</td>
                                         <td>3.00</td>
-                                        <td class="fw-bold">{{studgrade3.itec70}}</td>
+                                        <td class="fw-bold"><input type="text" name="itec70" value="{{studgrade3.itec70}}"></td>
                                         </tr>
                                         <tr>
                                         <th scope="row">FITT 4</th>
                                         <td>Physical Activities towards Health and Fitness II</td>
                                         <td>2.00</td>
-                                        <td class="fw-bold">{{studgrade3.fitt4}}</td>
+                                        <td class="fw-bold"><input type="text" name="fitt4" value="{{studgrade3.fitt4}}"></td>
                                         </tr>
                                         <!--SECOND YEAR MIDYEAR-->   
                                         <tr>
                                           <th scope="row">STAT 2</th>
                                           <td>Applied Statistics</td>
                                           <td>3.00</td>
-                                          <td class="fw-bold">{{studgrade4.stat2}}</td>
+                                          <td class="fw-bold"><input type="text" name="stat2" value="{{studgrade4.stat2}}"></td>
                                           </tr>
                                           <tr>
                                           <th scope="row">ITEC 75</th>
                                           <td>System Integration and Architecture 1</td>
                                           <td>3.00</td>
-                                          <td class="fw-bold">{{studgrade4.itec75}}</td>
+                                          <td class="fw-bold"><input type="text" name="itec75" value="{{studgrade4.itec75}}"></td>
                                           </tr>
                                           <!--THIRD YEAR FIRST SEM-->
                                           <tr>
                                             <th scope="row">ITEC 80</th>
                                             <td>Introduction to Human Computer Interaction</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade5.itec80}}</td>
+                                            <td class="fw-bold"><input type="text" name="itec80" value="{{studgrade5.itec80}}"></td>
                                            </tr>
                                             <tr>
                                             <th scope="row">ITEC 85</th>
                                             <td>Information Assurance and Security 1</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade5.itec85}}</td>
+                                            <td class="fw-bold"><input type="text" name="itec85" value="{{studgrade5.itec85}}"></td>
                                             </tr>
                                             <tr>
                                             <th scope="row">ITEC 90</th>
                                             <td>Network Fundamentals</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade5.itec90}}</td>
+                                            <td class="fw-bold"><input type="text" name="itec90" value="{{studgrade5.itec90}}"></td>
                                             </tr>
                                             <tr>
                                             <th scope="row">INSY 55</th>
                                             <td>System Analysis and Design</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade5.insy55}}</td>
+                                            <td class="fw-bold"><input type="text" name="insy55" value="{{studgrade5.insy55}}"></td>
                                             </tr>
                                             <tr>
                                             <th scope="row">DCIT 26</th>
                                             <td>Application Development and Emerging Technologies</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade5.dcit26}}</td>
+                                            <td class="fw-bold"><input type="text" name="dcit26" value="{{studgrade5.dcit26}}"></td>
                                             </tr>
                                             <tr>
                                             <th scope="row">DCIT 60</th>
                                             <td>Methods of Research</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade5.dcit60}}</td>
+                                            <td class="fw-bold"><input type="text" name="dcit60" value="{{studgrade5.dcit60}}"></td>
                                            </tr>
                                            <!--THIRD YEAR SECOND SEM-->
                                            <tr>
                                             <th scope="row">GNED 09</th>
                                             <td>Rizal: Life, Works, and Writings</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade6.gned09}}</td>
+                                            <td class="fw-bold"><input type="text" name="gned09" value="{{studgrade6.gned09}}"></td>
                                             </tr>
                                             <tr>
                                             <th scope="row">ITEC 95</th>
                                             <td>Quantitative Methods (Modeling & Simulation)</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade6.itec95}}</td>
+                                            <td class="fw-bold"><input type="text" name="itec95" value="{{studgrade6.itec95}}"></td>
                                             </tr>
                                             <tr>
                                             <th scope="row">ITEC 101</th>
                                             <td>IT ELECTIVE 1 (Human Computer Interaction 2)</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade6.itec101}}</td>
+                                            <td class="fw-bold"><input type="text" name="itec101" value="{{studgrade6.itec101}}"></td>
                                             </tr>
                                             <tr>
                                             <th scope="row">ITEC 106</th>
                                             <td>IT ELECTIVE 2 (Web System and Technologies 2)</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade6.itec106}}</td>
+                                            <td class="fw-bold"><input type="text" name="itec106" value="{{studgrade6.itec106}}"></td>
                                             </tr>
                                             <tr>
                                             <th scope="row">ITEC 100</th>
                                             <td>Information Assurance and Security 2</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade6.itec100}}</td>
+                                            <td class="fw-bold"><input type="text" name="itec100" value="{{studgrade6.itec100}}"></td>
                                             </tr>
                                             <tr>
                                             <th scope="row">ITEC 105</th>
                                             <td>Network Management</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade6.itec105}}</td>
+                                            <td class="fw-bold"><input type="text" name="itec105" value="{{studgrade6.itec105}}"></td>
                                             </tr>
                                             <tr>
                                             <th scope="row">ITEC 200A</th>
                                             <td>Capstone Project and Research 1</td>
                                             <td>3.00</td>
-                                            <td class="fw-bold">{{studgrade6.itec200a}}</td>
+                                            <td class="fw-bold"><input type="text" name="itec200a" value="{{studgrade6.itec200a}}"></td>
                                             </tr>
                                              <!--FOURTH YEAR FIRST SEM-->
                                              <tr>
                                               <th scope="row">DCIT 65</th>
                                               <td>Social and Professional Issues</td>
                                               <td>3.00</td>
-                                              <td class="fw-bold">{{studgrade7.dcit65}}</td>
+                                              <td class="fw-bold"><input type="text" name="dcit65" value="{{studgrade7.dcit65}}"></td>
                                               </tr>
                                               <tr>
                                               <th scope="row">ITEC 111</th>
                                               <td>IT ELECTIVE 3 (Integrated Programming and Technologies 2)</td>
                                               <td>3.00</td>
-                                              <td class="fw-bold">{{studgrade7.itec111}}</td>
+                                              <td class="fw-bold"><input type="text" name="itec111" value="{{studgrade7.itec111}}"></td>
                                               </tr>
                                               <tr>
                                               <th scope="row">ITEC 116</th>
                                               <td>IT ELECTIVE 4 (Systems Integration and Architecture 2)</td>
                                               <td>3.00</td>
-                                              <td class="fw-bold">{{studgrade7.itec116}}</td>
+                                              <td class="fw-bold"><input type="text" name="itec116" value="{{studgrade7.itec116}}"></td>
                                              </tr>
                                               <tr>
                                               <th scope="row">ITEC 110</th>
                                               <td>Systems Administration and Maintenance</td>
                                               <td>3.00</td>
-                                              <td class="fw-bold">{{studgrade7.itec110}}</td>
+                                              <td class="fw-bold"><input type="text" name="itec110" value="{{studgrade7.itec110}}"></td>
                                              </tr>
                                               <tr>
                                               <th scope="row">ITEC 200B</th>
                                               <td>Capstone Project and Research 2</td>
                                               <td>3.00</td>
-                                              <td class="fw-bold">{{studgrade7.itec200b}}</td>
+                                              <td class="fw-bold"><input type="text" name="itec200b" value="{{studgrade7.itec200b}}"></td>
                                               </tr>
                                                <!--FOURTH YEAR SECOND SEM-->
                                                <tr>
                                                 <th scope="row">ITEC 199</th>
                                                 <td>Practicum (Minimum 486 Hours)</td>
                                                 <td>6.00</td>
-                                                <td class="fw-bold">{{studgrade8.itec199}}</td>
+                                                <td class="fw-bold"><input type="text" name="itec199" value="{{studgrade8.itec199}}"></td>
                                                </tr>
                                         </tbody>
+                                          
                                     </table>
+                                    <div class="col-md-3">
+                                      <button type="submit" class="btn btn-success">Update</button>
+                                    </div>  
                                 </div>      
                             </div>
                         </div>
                         <!--end of subject table-->
                     </div>
                     <!--INPUT of GRADES-->
-                    <div class="col-md-3">                 
+                <div class="col-md-3">     
+                   
           </form>
         </main>
       </div>
