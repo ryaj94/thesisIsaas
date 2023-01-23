@@ -18,39 +18,14 @@
     <nav class="navbar navbar-light bg-light shadow-sm bg-body rounded">
       <div class="container-fluid">
         <a class="navbar-brand">Student Advising</a>
-        <form class="d-flex">
-          <button class="btn btn-outline-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">User Name</button>
-
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-              <div class="offcanvas-header">
-                <h5 id="offcanvasRightLabel">Student Advising</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-              <div class="offcanvas-body">
-                <ul class="nav nav-pills flex-column mb-auto">
-                  <li class="nav-item">
-                    <a href="AdviserProfile.html" class="bg-success nav-link text-dark shadow-sm mt-1 bg-body rounded">Adviser Profile</a>
-                  </li>
-                  <li>
-                    <a href="ViewStudent.html" class="nav-link text-white shadow-sm mt-1 rounded" style="background: #198754;" aria-current="page">View Student</a>              
-                  </li>
-                  <li>
-                    <a href="Student Advising.html" class="nav-link text-dark shadow-sm mt-1 bg-body rounded link-success">Student Advising</a>
-                  </li>
-                  <li>
-                    <a href="index.html" class="nav-link text-dark shadow-sm mt-1 bg-body rounded">Logout</a>
-                  </li>
-                </ul>
-              </div>
-</div>
-        </form>
+        
       </div>
     </nav>
     <!--Side Bar-->
     <div class="container-fluid">
       <div class="row">
         <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse bg-light shadow-sm" style="height: 100%;">
-          <div class="d-flex flex-column position-sticky pt-4" style="height:100vh;">
+          <div class="d-flex flex-column position-sticky pt-4" style="height:600vh;">
             <ul class="nav nav-pills flex-column mb-auto">
               <li class="nav-item">
                 <a href="{% url 'adviserprof' %}" class="bg-success nav-link text-dark shadow-sm mt-1 bg-body rounded">Adviser Profile</a>
@@ -141,14 +116,23 @@
                                 <!--FIRST YEAR FIRST SEM-->
                                     <table class="table table-hover">
                                         <thead>
+                                          
+                                        
+                                        </thead>
+                                        <tbody>
+                                          <tr class="text-white bg-success">
+                                            <th class="text-center">FIRST YEAR: </th>
+                                            <th >FIRST SEMESTER</th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                          </tr>
                                         <tr class="text-success">
                                             <th scope="col" >Course Code</th>
                                             <th scope="col">Course Title</th>
                                             <th scope="col">Units</th>
                                             <th scope="col">Grades</th>
                                         </tr>
-                                        </thead>
-                                        <tbody>
                                         <tr>
                                             <th scope="row">GNED 02</th>
                                             <td>Ethics</td>
@@ -204,6 +188,19 @@
                                             <td class="fw-bold"><input type="text" name="ornt1" value="{{studgrade.ornt1}}"></td>  
                                         </tr>
                                          <!--FIRST YEAR SECOND SEM-->
+                                         <tr class="text-white bg-success">
+                                          <th class="text-center">FIRST YEAR: </th>
+                                          <th >SECOND SEMESTER</th>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                        </tr>
+                                      <tr class="text-success">
+                                          <th scope="col" >Course Code</th>
+                                          <th scope="col">Course Title</th>
+                                          <th scope="col">Units</th>
+                                          <th scope="col">Grades</th>
+                                      </tr>
                                       <tr>
                                           <th scope="row">GNED 01</th>
                                           <td>Arts Appreciation</td>
@@ -250,9 +247,22 @@
                                           <th scope="row">NSTP 2</th>
                                           <td>National Service Training Program 2</td>
                                           <td>3.00</td>
-                                          <td class="fw-bold"><input type="text" name="nstp2" value="{{studgrade1.nstp2}}"></td>
+                                          <td><input type="text" name="nstp2" value="{{studgrade1.nstp2}}"></td>
                                       </tr>
                                        <!--SECOND YEAR FIRST SEM-->
+                                       <tr class="text-white bg-success">
+                                        <th class="text-center">SECOND YEAR: </th>
+                                        <th >FIRST SEMESTER</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                    <tr class="text-success">
+                                        <th scope="col" >Course Code</th>
+                                        <th scope="col">Course Title</th>
+                                        <th scope="col">Units</th>
+                                        <th scope="col">Grades</th>
+                                    </tr>
                                       <tr>
                                         <th scope="row">GNED 04</th>
                                         <td>Mga Babasahin Hinggil sa Kasaysayan ng Pilipinas</td>
@@ -303,6 +313,19 @@
                                       
                                       </tr>
                                       <!--SECOND YEAR SECOND SEM-->
+                                      <tr class="text-white bg-success">
+                                        <th class="text-center">SECOND YEAR: </th>
+                                        <th >SECOND SEMESTER</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                      <tr class="text-success">
+                                          <th scope="col" >Course Code</th>
+                                          <th scope="col">Course Title</th>
+                                          <th scope="col">Units</th>
+                                          <th scope="col">Grades</th>
+                                      </tr>
                                       <tr>
                                         <th scope="row">GNED 08</th>
                                         <td>Understanding the Self</td>
@@ -346,6 +369,19 @@
                                         <td class="fw-bold"><input type="text" name="fitt4" value="{{studgrade3.fitt4}}"></td>
                                         </tr>
                                         <!--SECOND YEAR MIDYEAR-->   
+                                        <tr class="text-white bg-success">
+                                          <th class="text-center">SECOND YEAR: </th>
+                                          <th >MIDYEAR</th>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                        </tr>
+                                        <tr class="text-success">
+                                            <th scope="col" >Course Code</th>
+                                            <th scope="col">Course Title</th>
+                                            <th scope="col">Units</th>
+                                            <th scope="col">Grades</th>
+                                        </tr>
                                         <tr>
                                           <th scope="row">STAT 2</th>
                                           <td>Applied Statistics</td>
@@ -359,6 +395,19 @@
                                           <td class="fw-bold"><input type="text" name="itec75" value="{{studgrade4.itec75}}"></td>
                                           </tr>
                                           <!--THIRD YEAR FIRST SEM-->
+                                          <tr class="text-white bg-success">
+                                            <th class="text-center">THIRD YEAR: </th>
+                                            <th >FIRST SEMESTER</th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                          </tr>
+                                          <tr class="text-success">
+                                              <th scope="col" >Course Code</th>
+                                              <th scope="col">Course Title</th>
+                                              <th scope="col">Units</th>
+                                              <th scope="col">Grades</th>
+                                          </tr>
                                           <tr>
                                             <th scope="row">ITEC 80</th>
                                             <td>Introduction to Human Computer Interaction</td>
@@ -396,6 +445,19 @@
                                             <td class="fw-bold"><input type="text" name="dcit60" value="{{studgrade5.dcit60}}"></td>
                                            </tr>
                                            <!--THIRD YEAR SECOND SEM-->
+                                           <tr class="text-white bg-success">
+                                            <th class="text-center">THIRD YEAR: </th>
+                                            <th >SECOND SEMESTER</th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                          </tr>
+                                          <tr class="text-success">
+                                              <th scope="col" >Course Code</th>
+                                              <th scope="col">Course Title</th>
+                                              <th scope="col">Units</th>
+                                              <th scope="col">Grades</th>
+                                          </tr>
                                            <tr>
                                             <th scope="row">GNED 09</th>
                                             <td>Rizal: Life, Works, and Writings</td>
@@ -439,6 +501,19 @@
                                             <td class="fw-bold"><input type="text" name="itec200a" value="{{studgrade6.itec200a}}"></td>
                                             </tr>
                                              <!--FOURTH YEAR FIRST SEM-->
+                                             <tr class="text-white bg-success">
+                                              <th class="text-center">FOURTH YEAR: </th>
+                                              <th >FIRST SEMESTER</th>
+                                              <td></td>
+                                              <td></td>
+                                              <td></td>
+                                            </tr>
+                                            <tr class="text-success">
+                                                <th scope="col" >Course Code</th>
+                                                <th scope="col">Course Title</th>
+                                                <th scope="col">Units</th>
+                                                <th scope="col">Grades</th>
+                                            </tr>
                                              <tr>
                                               <th scope="row">DCIT 65</th>
                                               <td>Social and Professional Issues</td>
@@ -470,6 +545,19 @@
                                               <td class="fw-bold"><input type="text" name="itec200b" value="{{studgrade7.itec200b}}"></td>
                                               </tr>
                                                <!--FOURTH YEAR SECOND SEM-->
+                                               <tr class="text-white bg-success">
+                                                <th class="text-center">FOURTH YEAR: </th>
+                                                <th >SECOND SEMESTER</th>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                              </tr>
+                                              <tr class="text-success">
+                                                  <th scope="col" >Course Code</th>
+                                                  <th scope="col">Course Title</th>
+                                                  <th scope="col">Units</th>
+                                                  <th scope="col">Grades</th>
+                                              </tr>
                                                <tr>
                                                 <th scope="row">ITEC 199</th>
                                                 <td>Practicum (Minimum 486 Hours)</td>
@@ -488,7 +576,7 @@
                         <!--end of subject table-->
                     </div>
                     <!--INPUT of GRADES-->
-                <div class="col-md-3">     
+                 
                    
           </form>
         </main>

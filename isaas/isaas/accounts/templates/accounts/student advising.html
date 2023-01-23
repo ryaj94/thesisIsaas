@@ -18,9 +18,8 @@
     <nav class="navbar navbar-light bg-light shadow bg-body rounded">
       <div class="container-fluid">
         <a class="navbar-brand">Student Advising</a>
-        <form class="d-flex">
-          <a class="btn btn-outline-success" type="submit" href="student advising.html">User Name</a>
-        </form>
+         
+        <a class="btn btn-success" type="button" href="{% url 'checklist' %}">Course Checklist</a>
       </div>
     </nav>
   <!--Side bar-->
@@ -787,11 +786,14 @@
                                                                     <td>Integrated Programming and Technologies 1</td>
                                                                     <td>3.00</td>
                                                                 </tr>
-                                                               
+                                                            {% if scndyrstnding == 1 %}   
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}
                                                                 <th scope="row">ITEC 65</th>
                                                                 <td>Open Source Technology</td>
-                                                                <td>3.00</td>
+                                                                <td>3.00 </td>
                                                             </tr>
                                                             {% if subj.0 == 'dcit55' %}
                                                             <tr>
@@ -803,7 +805,11 @@
                                                                 <td>3.00</td>
                                                             </tr>
                                                             
+                                                            {% if scndyrstnding == 1 %}   
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}
                                                                 <th scope="row">ITEC 70</th>
                                                                 <td>Multimedia Systems</td>
                                                                 <td>3.00</td>
@@ -828,7 +834,11 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            {% if scndyrstnding == 1 %}   
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}
                                                             <th scope="row">STAT 2</th>
                                                             <td>Applied Statistics</td>
                                                             <td>3.00</td>
@@ -857,7 +867,11 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            {% if thirdyrstnding == 1 %}   
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}
                                                             <th scope="row">ITEC 80</th>
                                                             <td>Introduction to Human Computer Interaction</td>
                                                             <td>3.00</td>
@@ -882,7 +896,11 @@
                                                             <td>3.00</td>
                                                             </tr>
                                                             
+                                                            {% if thirdyrstnding == 1 %}   
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}
                                                             <th scope="row">INSY 55</th>
                                                             <td>System Analysis and Design</td>
                                                             <td>3.00</td>
@@ -897,7 +915,11 @@
                                                             <td>3.00</td>
                                                             </tr>
                                                             
+                                                            {% if thirdyrstnding == 1 %}   
                                                             <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}
                                                             <th scope="row">DCIT 60</th>
                                                             <td>Methods of Research</td>
                                                             <td>3.00</td>
@@ -969,7 +991,11 @@
                                                             {% if subj.1 == 'itec100' %}
                                                                 {% if subj.3 == 'itec199' %}
                                                                     {% if subj.4 == 'itec200a' %}
-                                                                    <tr>
+                                                                        {% if thirdyrstnding == 1 %}
+                                                                         <tr>
+                                                                        {% else %}
+                                                                        <tr class="bg-danger">
+                                                                        {% endif %}
                                                                     {% else %}
                                                                     <tr class="bg-danger">
                                                                     {% endif %}
@@ -998,7 +1024,11 @@
                                                         </tr>
                                                         </thead>
                                                         <tbody>
-                                                        <tr>
+                                                            {% if thirdyrstnding == 1 %}   
+                                                            <tr>
+                                                            {% else %}
+                                                            <tr class="bg-danger">
+                                                            {% endif %}
                                                             <th scope="row">DCIT 65</th>
                                                             <td>Social and Professional Issues</td>
                                                             <td>3.00</td>
@@ -1081,12 +1111,21 @@
                                                     </tbody>
                                                     </table>
                                                     {% endif %}
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-12">
+                                                            <small class="text-danger fst-italic text-uppercase">*Highlighted row indicates that you have a failing grade(s) of the pre-requisite subject(s)</small>
+                                                            
+                                                        </div>
+                                                    </div>
+
+
                                                 </div> 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                           
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
                             </div>

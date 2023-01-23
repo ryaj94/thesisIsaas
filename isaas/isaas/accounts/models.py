@@ -27,6 +27,7 @@ class adviserprof(models.Model):
     adviser_position = models.CharField(max_length=200, verbose_name='Position' , null=True, blank=True ) 
     adviser_address = models.CharField(max_length=200, verbose_name='Address' , null=True, blank=True )
     adviser_cnumber = models.CharField(max_length=200, verbose_name='Contact Number' , null=True, blank=True )
+    adviser_handle = models.IntegerField( verbose_name='School Year Handle' , null=True, blank=True )
 
     def __str__(self):
         return f'{self.adviser_fname} {self.adviser_mname} {self.adviser_lname}'
@@ -34,56 +35,56 @@ class adviserprof(models.Model):
 
 class studentgrades(models.Model):
     user = models.OneToOneField(User, null=True , blank=True , on_delete=models.CASCADE)
-    gned02 = models.FloatField(null=True , blank=True)
-    gned05 = models.FloatField(null=True , blank=True)
-    gned11 = models.FloatField(null=True , blank=True)
-    cosc50 = models.FloatField(null=True , blank=True)
-    dcit21 = models.FloatField(null=True , blank=True)
-    dcit22 = models.FloatField(null=True , blank=True)
-    fitt1 = models.FloatField(null=True , blank=True)
-    nstp1 = models.FloatField(null=True , blank=True)
-    ornt1 = models.FloatField(null=True , blank=True)
+    gned02 = models.CharField(max_length=200, null=True , blank=True ,default = 'Not yet taken')
+    gned05 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    gned11 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    cosc50 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    dcit21 = models.CharField(max_length=200, null=True , blank=True ,default = 'Not yet taken')
+    dcit22 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    fitt1 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    nstp1 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    ornt1 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
     
     def __str__(self):
         return str(self.user)
 
 class fy2ndsem(models.Model):
     user = models.OneToOneField(User, null=True , blank=True , on_delete=models.CASCADE)
-    gned01 = models.FloatField(null=True , blank=True)
-    gned06 = models.FloatField(null=True , blank=True)
-    gned12 = models.FloatField(null=True , blank=True)
-    gned03 = models.FloatField(null=True , blank=True)
-    itec50 = models.FloatField(null=True , blank=True)
-    dcit23 = models.FloatField(null=True , blank=True)
-    fitt2 = models.FloatField(null=True , blank=True)
-    nstp2 = models.FloatField(null=True , blank=True)
+    gned01 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    gned06 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    gned12 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    gned03 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    itec50 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    dcit23 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    fitt2 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    nstp2 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
 
     def __str__(self):
         return str(self.user)
 
 class sy1stsem(models.Model):
     user = models.OneToOneField(User, null=True , blank=True , on_delete=models.CASCADE)
-    gned04 = models.FloatField(null=True , blank=True)
-    gned07 = models.FloatField(null=True , blank=True)
-    gned10 = models.FloatField(null=True , blank=True)
-    gned14 = models.FloatField(null=True , blank=True)
-    itec55 = models.FloatField(null=True , blank=True)
-    dcit24 = models.FloatField(null=True , blank=True)
-    dcit50 = models.FloatField(null=True , blank=True)
-    fitt3 = models.FloatField(null=True , blank=True)
+    gned04 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    gned07 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    gned10 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    gned14 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    itec55 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    dcit24 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    dcit50 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    fitt3 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
     
     def __str__(self):
         return str(self.user)
 
 class sy2ndsem(models.Model):
     user = models.OneToOneField(User, null=True , blank=True , on_delete=models.CASCADE)
-    gned08 = models.FloatField(null=True , blank=True)
-    dcit25 = models.FloatField(null=True , blank=True)
-    itec60 = models.FloatField(null=True , blank=True)
-    itec65 = models.FloatField(null=True , blank=True)
-    dcit55 = models.FloatField(null=True , blank=True)
-    itec70 = models.FloatField(null=True , blank=True)
-    fitt4 = models.FloatField(null=True , blank=True)
+    gned08 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    dcit25 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    itec60 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    itec65 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    dcit55 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    itec70 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    fitt4 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
     
     def __str__(self):
         return str(self.user)
@@ -91,44 +92,44 @@ class sy2ndsem(models.Model):
 
 class sysummer(models.Model):
     user = models.OneToOneField(User, null=True , blank=True , on_delete=models.CASCADE)
-    stat2 = models.FloatField(null=True , blank=True)
-    itec75 = models.FloatField(null=True , blank=True)
+    stat2 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    itec75 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
     
     def __str__(self):
         return str(self.user)
     
 class ty1stsem(models.Model):
     user = models.OneToOneField(User, null=True , blank=True , on_delete=models.CASCADE)
-    itec80 = models.FloatField(null=True , blank=True)
-    itec85 = models.FloatField(null=True , blank=True)
-    itec90 = models.FloatField(null=True , blank=True)
-    insy55 = models.FloatField(null=True , blank=True)
-    dcit26 = models.FloatField(null=True , blank=True)
-    dcit60 = models.FloatField(null=True , blank=True)
+    itec80 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    itec85 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    itec90 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    insy55 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    dcit26 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    dcit60 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
     
     def __str__(self):
         return str(self.user)
 
 class ty2ndsem(models.Model):
     user = models.OneToOneField(User, null=True ,blank=True , on_delete=models.CASCADE)
-    gned09 = models.FloatField(null=True , blank=True)
-    itec95 = models.FloatField(null=True , blank=True)
-    itec101 = models.FloatField(null=True , blank=True)
-    itec106 = models.FloatField(null=True , blank=True)
-    itec100 = models.FloatField(null=True , blank=True)
-    itec105 = models.FloatField(null=True , blank=True)
-    itec200a = models.FloatField(null=True , blank=True)
+    gned09 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    itec95 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    itec101 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    itec106 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    itec100 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    itec105 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    itec200a = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
     
     def __str__(self):
         return str(self.user)
 
 class fy1stsem(models.Model):
     user = models.OneToOneField(User, null=True ,blank=True , on_delete=models.CASCADE)
-    dcit65 = models.FloatField(null=True , blank=True)
-    itec111 = models.FloatField(null=True , blank=True)
-    itec116 = models.FloatField(null=True , blank=True)
-    itec110 = models.FloatField(null=True , blank=True)
-    itec200b = models.FloatField(null=True , blank=True)
+    dcit65 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    itec111 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    itec116 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    itec110 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
+    itec200b = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
     
     def __str__(self):
         return str(self.user)
@@ -136,7 +137,7 @@ class fy1stsem(models.Model):
 
 class fry2ndsem(models.Model):
     user = models.OneToOneField(User, null=True ,blank=True , on_delete=models.CASCADE)
-    itec199 = models.FloatField(null=True , blank=True)
+    itec199 = models.CharField(max_length=200,null=True , blank=True ,default = 'Not yet taken')
     
     def __str__(self):
         return str(self.user)

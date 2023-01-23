@@ -18,9 +18,8 @@
     <nav class="navbar navbar-light bg-light shadow bg-body rounded">
       <div class="container-fluid">
         <a class="navbar-brand">Student Advising</a>
-        <form class="d-flex">
-          <button class="btn btn-outline-success" type="submit">User Name</button>
-        </form>
+        
+        <a class="btn btn-success" type="button" href="{% url 'checklist' %}">Course Checklist</a>
       </div>
     </nav>
   <!--Side bar-->
@@ -45,52 +44,6 @@
               </div> 
             </nav>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-5" style="overflow-y: auto; margin-top: 2.5vh;">
-              <!--Academic Info-->
-            <!--  <div class="row mt-3">
-                <div class="col-md-4">
-                  <div class="card shadow" >
-                    <div class="card-body">
-                      <div class="input-group input-group-sm mb-0">
-                        <span class="input-group-text bg-success text-white" id="inputGroup-sizing-sm">Search Student No.</span>
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                    </div>           
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 ">
-                  <div class="card shadow" >
-                    <div class="card-body">
-                      <div class="input-group input-group-sm mb-0">
-                        <label class="input-group-text bg-success text-white" for="inputGroupSelect01">Semester</label>
-                        <select class="form-select" id="inputGroupSelect01">
-                          <option selected class="text-muted"></option>
-                          <option value="1">FIRST SEMESTER</option>
-                          <option value="2">SECOND SEMESTER</option>
-                          <option value="3">MIDYEAR SEMESTER</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="card shadow">
-                      <div class="card-body">
-                          <div class="input-group input-group-sm mb-0">
-                              <label class="input-group-text bg-success text-white" for="inputGroupSelect01">Year Level</label>
-                              <select class="form-select" id="inputGroupSelect01">
-                                <option selected></option>
-                                <option value="1">FIRST YEAR</option>
-                                <option value="2">SECOND YEAR</option>
-                                <option value="3">THIRD YEAR</option>
-                                <option value="4">FOURTH YEAR</option>
-                                <option value="5">FIFTH YEAR</option>
-                              </select>
-                            </div>
-                      </div>
-                  </div>
-              </div>
-              </div>-->
-              <!--table content-->
               <div class="row">
                 <div class="col-md-11">
                     <div class="card shadow mt-3">
@@ -107,15 +60,56 @@
                                   </tr>
                                 </thead>
                                 <tbody>
+                                 
                                   {% for profs in studentprofs%}
-                                  <tr>
-                                    <th scope="row">{{profs.user}}</th>
-                                    <td>BSInfoTech</td>
-                                    <td>{{profs.user_yrandsec}}</td>
-                                    <td class="text-transform: uppercase;">{{profs.user_lname}}, {{profs.user_fname}} {{profs.user_mname}}</td>
-                                    <td>REGULAR</td>
-                                    <td class="text-success"> <a href="{% url 'studentinfo' profs.user %}" class="text-decoration-none text-success"> VIEW</a></td>
-                                  </tr>
+                                    {% if adviserprof.adviser_handle == 1 %}
+                                        {% if profs.user_yrandsec == '101' or profs.user_yrandsec == '102' %}
+                                        <tr>
+                                          <th scope="row">{{profs.user}}</th>
+                                          <td>BSInfoTech</td>
+                                          <td>{{profs.user_yrandsec}}</td>
+                                          <td class="text-transform: uppercase;">{{profs.user_lname}}, {{profs.user_fname}} {{profs.user_mname}}</td>
+                                          <td>REGULAR</td>
+                                          <td class="text-success"> <a href="{% url 'studentinfo' profs.user %}" class="text-decoration-none text-success"> VIEW</a></td>
+                                        </tr>
+                                        {% endif %}
+                                      {% endif %}
+                                      {% if adviserprof.adviser_handle == 2 %}
+                                        {% if profs.user_yrandsec == '201' or profs.user_yrandsec == '202' or profs.user_yrandsec == '203' %}
+                                        <tr>
+                                          <th scope="row">{{profs.user}}</th>
+                                          <td>BSInfoTech</td>
+                                          <td>{{profs.user_yrandsec}}</td>
+                                          <td class="text-transform: uppercase;">{{profs.user_lname}}, {{profs.user_fname}} {{profs.user_mname}}</td>
+                                          <td>REGULAR</td>
+                                          <td class="text-success"> <a href="{% url 'studentinfo' profs.user %}" class="text-decoration-none text-success"> VIEW</a></td>
+                                        </tr>
+                                        {% endif %}
+                                      {% endif %}
+                                      {% if adviserprof.adviser_handle == 3 %}
+                                        {% if profs.user_yrandsec == '301' or profs.user_yrandsec == '302' %}
+                                        <tr>
+                                          <th scope="row">{{profs.user}}</th>
+                                          <td>BSInfoTech</td>
+                                          <td>{{profs.user_yrandsec}}</td>
+                                          <td class="text-transform: uppercase;">{{profs.user_lname}}, {{profs.user_fname}} {{profs.user_mname}}</td>
+                                          <td>REGULAR</td>
+                                          <td class="text-success"> <a href="{% url 'studentinfo' profs.user %}" class="text-decoration-none text-success"> VIEW</a></td>
+                                        </tr>
+                                        {% endif %}
+                                      {% endif %}
+                                      {% if adviserprof.adviser_handle == 4 %}
+                                        {% if profs.user_yrandsec == '401' or profs.user_yrandsec == '402' %}
+                                        <tr>
+                                          <th scope="row">{{profs.user}}</th>
+                                          <td>BSInfoTech</td>
+                                          <td>{{profs.user_yrandsec}}</td>
+                                          <td class="text-transform: uppercase;">{{profs.user_lname}}, {{profs.user_fname}} {{profs.user_mname}}</td>
+                                          <td>REGULAR</td>
+                                          <td class="text-success"> <a href="{% url 'studentinfo' profs.user %}" class="text-decoration-none text-success"> VIEW</a></td>
+                                        </tr>
+                                        {% endif %}
+                                      {% endif %}
                                   {% endfor %}
                                 </tbody>
                             </table>

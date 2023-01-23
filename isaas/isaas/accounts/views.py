@@ -41,54 +41,117 @@ def studadvise(request):
          usergrade = request.user.studentgrades
          arr=[[113,usergrade.gned11], [115,usergrade.dcit21], [116,usergrade.dcit22]]    
          rows, cols = (3, 2)
-    elif( userprof1.user_yrandsec == '102' ):
+         subj=[]
+         for f in range(rows):
+          subj.append(model.predict([arr[f]]))
+         
+         scndyrstnding = 2
+         thirdyrstnding = 2
+         
+    if( userprof1.user_yrandsec == '102' ):
          usergrade = request.user.fy2ndsem
          usergrade1 = request.user.studentgrades
          arr=[[126,usergrade.dcit23],[132,usergrade1.gned11]]    
          rows, cols = (2, 2)
-    elif( userprof1.user_yrandsec == '201' ):
+         subj=[]
+         for f in range(rows):
+          subj.append(model.predict([arr[f]]))
+         
+         scndyrstnding = 2
+         thirdyrstnding = 2
+
+
+
+    if( userprof1.user_yrandsec == '201' or userprof1.user_yrandsec == '202'):
          usergrade = request.user.sy1stsem
-         arr=[[216,usergrade.dcit24],[215,usergrade.itec55],[217,usergrade.dcit50]]    
-         rows, cols = (3, 2)
-    elif( userprof1.user_yrandsec == '202' ):
+         usergrade1 = request.user.studentgrades
+         usergrade2 = request.user.fy2ndsem
+         arr=[[216,usergrade.dcit24],[215,usergrade.itec55],[217,usergrade.dcit50],[113,usergrade1.gned11], [115,usergrade1.dcit21], [116,usergrade1.dcit22], [132,usergrade1.gned11], [126,usergrade2.dcit23]]    
+         rows, cols = (8, 2)
+         subj=[]
+         for f in range(rows):
+          subj.append(model.predict([arr[f]]))
+
+         if (subj[0] == 'dcit55' and subj[1] == 'itec60' and subj[2] == 'dcit25,itec60' and subj[3] == 'gned12' and subj[4] == 'itec50' and subj[5] == 'dcit23' and subj[6] == 'gned14' and subj[7] == 'dcit24,dcit50,itec55'):
+            scndyrstnding = 1
+            thirdyrstnding = 2
+         else:
+            scndyrstnding = 2
+            thirdyrstnding = 2
+   
+
+    if( userprof1.user_yrandsec == '202' ):
          usergrade = request.user.sy2ndsem
          arr=[[223,usergrade.itec60]]    
          rows, cols = (1, 2)
-    elif( userprof1.user_yrandsec == '203' ):
+         subj=[]
+         for f in range(rows):
+          subj.append(model.predict([arr[f]]))
+
+                   
+
+    if( userprof1.user_yrandsec == '203' or userprof1.user_yrandsec == '302' or userprof1.user_yrandsec == '301' or userprof1.user_yrandsec == '401'):
          usergrade = request.user.sysummer
          usergrade1 = request.user.sy2ndsem
          usergrade2 = request.user.sy1stsem
-         arr=[[232,usergrade.itec60], [225,usergrade1.dcit55], [235,usergrade2.itec55] ]    
-         rows, cols = (3, 2)
-    elif( userprof1.user_yrandsec == '301' ):
+         usergrade3 = request.user.studentgrades
+         usergrade4 = request.user.fy2ndsem
+         arr=[[232,usergrade1.itec60], [225,usergrade1.dcit55], [235,usergrade2.itec55],[216,usergrade2.dcit24],[215,usergrade2.itec55],[217,usergrade2.dcit50],[113,usergrade3.gned11], [115,usergrade3.dcit21], [116,usergrade3.dcit22], [132,usergrade3.gned11], [126,usergrade4.dcit23]]    
+         rows, cols = (11, 2)
+         subj=[]
+         for f in range(rows):
+          subj.append(model.predict([arr[f]]))
+
+
+         if (subj[0] == 'itec85' and subj[1] == 'dcit26' and subj[2] == 'itec90' and subj[3] == 'dcit55' and subj[4] == 'itec60' and subj[5] == 'dcit25,itec60' and subj[6] == 'gned12' and subj[7] == 'itec50' and subj[8] == 'dcit23' and subj[9] == 'gned14' and subj[10] == 'dcit24,dcit50,itec55'):
+            thirdyrstnding = 1
+            scndyrstnding = 1
+         else:
+            thirdyrstnding = 2
+            scndyrstnding = 1
+
+    if( userprof1.user_yrandsec == '301' ):
          usergrade = request.user.ty1stsem
          usergrade1 = request.user.studentgrades
          usergrade2 = request.user.sysummer
          arr=[[311,usergrade.itec80], [312,usergrade.itec85], [313,usergrade.itec90], [315,usergrade.dcit26], [316,usergrade.dcit60], [231,usergrade2.stat2] ]    
          rows, cols = (6, 2)
-    elif( userprof1.user_yrandsec == '302' ):
+         subj=[]
+         for f in range(rows):
+          subj.append(model.predict([arr[f]]))
+         
+
+    if( userprof1.user_yrandsec == '302' ):
          usergrade = request.user.ty2ndsem
          usergrade1 = request.user.sy2ndsem
          usergrade2 = request.user.sysummer
-         arr=[[223,usergrade1.itec60], [232,usergrade2.itec75], [325,usergrade.itec100], [327,usergrade.itec200a] ]    
+         arr=[[223,usergrade1.itec60], [232,usergrade2.itec75], [325,usergrade.itec100], [327,usergrade.itec200a]]    
          rows, cols = (4, 2)
-    elif( userprof1.user_yrandsec == '401' ):
+         subj=[]
+         for f in range(rows):
+          subj.append(model.predict([arr[f]]))
+
+
+    if( userprof1.user_yrandsec == '401' ):
          usergrade1 = request.user.ty1stsem
          usergrade = request.user.fy1stsem
          arr=[[312,usergrade1.itec85], [315,usergrade1.dcit26]]    
          rows, cols = (2, 2)
-    else:
-        row = 0
-
-        if row == 0:
-            return redirect("home")
-            
-    subj=[]
-    for f in range(rows):
-        subj.append(model.predict([arr[f]]))
+         subj=[]
+         for f in range(rows):
+          subj.append(model.predict([arr[f]]))
 
     
-    context = {'usergrade': usergrade, 'userprof': userprof1, 'subj':subj }
+
+    if rows == 0:
+     return redirect("home")
+            
+
+
+    print(subj)
+
+    
+    context = {'usergrade': usergrade, 'userprof': userprof1, 'subj':subj, 'scndyrstnding': scndyrstnding, 'thirdyrstnding': thirdyrstnding }
     return render(request, 'accounts/student advising.html', context )
 
 
@@ -117,11 +180,12 @@ def gradesupdate(request, pk):
 
 
 def viewstudents(request):
+    adviserprof = request.user.adviserprof
     studentprofs = studentprof.objects.all()
     print(studentprofs)
-   #context = {'studentprof': studentprofs } 
+   #context = {'studentprof': studentprofs, 'adviserprof':adviserprof  } 
    
-    return render(request, 'accounts/ViewStudent.html', {'studentprofs': studentprofs})
+    return render(request, 'accounts/ViewStudent.html', {'studentprofs': studentprofs, 'adviserprof': adviserprof })
 
 
 
@@ -276,6 +340,8 @@ def predict(request):
     return render(request, 'accounts/sampleOutput.html', {'result': subj})
 
 
+def checklist(request):
+    return render(request, 'accounts/checklist.html')
 
 #@login_required(login_url='loginPage')
 #def adminPage(request):

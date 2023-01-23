@@ -14,16 +14,15 @@
   <nav class="navbar navbar-light bg-light shadow bg-body rounded">
     <div class="container-fluid">
       <a class="navbar-brand">Student Advising</a>
-      <form class="d-flex">
-        <button class="btn btn-outline-success" type="submit">User Name</button>
-      </form>
+      <!--Course Checklist button-->
+      <a class="btn btn-success" type="button" href="{% url 'checklist' %}">Course Checklist</a>
     </div>
   </nav>
   
 <div class="container-fluid">
   <div class="row">
     <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse bg-light shadow-sm" style="height: 100%;">
-      <div class="d-flex flex-column position-sticky pt-4" style="height:90vh;">
+      <div class="d-flex flex-column position-sticky pt-4" style="height:610vh;">
           <!-- side bar-->
           <ul class="nav nav-pills flex-column mb-auto">
               <li class="nav-item mb-1"> <!-- user profile-->
@@ -113,354 +112,545 @@
                 <p class="mb-1 text-start">{{ userprof.user_cnumber }}  </p>  
                 <small class="mb-0 text-muted text-start">E-mail</small> 
                 <p class="mb-1 text-start">{{ user.email }} </p>         
-              </div>
-              <small class="mb-0 text-muted text-start">Student Grades</small> 
+              </div> 
               <div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="row mt-3">
+        <div class="col-lg-11 ">
+          <div class="card shadow mb-3">
+            <div class="card-body">
+              <div class="card-text">
+                <b class="text-success">STUDENT GRADES</b>
                 <form method="POST">
                   {% csrf_token %}          
                       <div class="row mt-3">
-                          <div class="col-lg-11">
-                              <div class="card shadow mb-1">
+                          <div class="col-lg-12">
+                              <div class="card mb-1">
                                   <div class="card-body" >
                                       <div class="card-text">
                                       <!--FIRST YEAR FIRST SEM-->
                                           <table class="table table-hover">
                                               <thead>
-                                              <tr class="text-success">
+                                                <tr class="text-white bg-success">
+                                                  <th class="text-center">FIRST YEAR: </th>
+                                                  <th >FIRST SEMESTER</th>
+                                                  <td></td>
+                                                  <td></td>
+                                                  <td></td>
+                                                </tr>
+                                              
+                                              </thead>
+                                              <tbody>
+                                                <tr class="text-success">
                                                   <th scope="col" >Course Code</th>
                                                   <th scope="col">Course Title</th>
                                                   <th scope="col">Units</th>
                                                   <th scope="col">Grades</th>
+                                                  <th scope="col">Pre-requisite</th>
                                               </tr>
-                                              </thead>
-                                              <tbody>
                                               <tr>
                                                   <th scope="row">GNED 02</th>
                                                   <td>Ethics</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade.gned02}}</td>
+                                                  <td></td>
                                               </tr>
                                               <tr>
                                                   <th scope="row">GNED 05</th>
                                                   <td>Purposive Communication</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade.gned05}}</td>
+                                                  <td></td>
                                               </tr>
                                               <tr>
                                                   <th scope="row">GNED 11</th>
                                                   <td>Kontekstwalisadong Komunikasyon sa Filipino</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade.gned11}}</td>
+                                                  <td></td>
                                               </tr>
                                               <tr>
                                                   <th scope="row">COSC 50</th>
                                                   <td>Discrete Structure</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade.cosc50}}</td>
+                                                  <td></td>
                                               </tr>
                                               <tr>
                                                   <th scope="row">DCIT 21</th>
                                                   <td>Introduction to Computing</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade.dcit21}}</td>
+                                                  <td></td>
                                               </tr>
                                               <tr>
                                                   <th scope="row">DCIT 22</th>
                                                   <td>Computer Programming I</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade.dcit22}}</td>
+                                                  <td></td>
                                               </tr>
                                               <tr>
                                                   <th scope="row">FITT 1</th>
                                                   <td>Movement Enhancement</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade.fitt1}}</td>
+                                                  <td></td>
                                               </tr>
                                               <tr>
                                                   <th scope="row">NSTP 1</th>
                                                   <td>National Service Training Program 1</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade.nstp1}}</td>
+                                                  <td></td>
                                               </tr>
                                               <tr>
                                                   <th scope="row">ORNT 1</th>
                                                   <td>Institutional Orientation</td>
                                                   <td>1.00</td>
                                                   <td class="fw-bold">{{usergrade.ornt1}}</td>  
+                                                  <td></td>
                                               </tr>
                                                <!--FIRST YEAR SECOND SEM-->
+                                          {% if usergrade1.gned01 == '-' %}
+
+
+                                          {% else %}
+                                               <tr class="text-white bg-success">
+                                                <th class="text-center">FIRST YEAR: </th>
+                                                <th >SECOND SEMESTER</th>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                               </tr>
+                                               <tr class="text-success">
+                                                <th scope="col" >Course Code</th>
+                                                <th scope="col">Course Title</th>
+                                                <th scope="col">Units</th>
+                                                <th scope="col">Grades</th>
+                                                <th scope="col">Pre-requisite</th>
+                                            </tr>
                                             <tr>
                                                 <th scope="row">GNED 01</th>
                                                 <td>Arts Appreciation</td>
                                                 <td>3.00</td>
                                                 <td class="fw-bold">{{usergrade1.gned01}}</td>
+                                                <td></td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">GNED 06</th>
                                                 <td>Science, Technology, and Society</td>
                                                 <td>3.00</td>
                                                 <td class="fw-bold">{{usergrade1.gned06}}</td>
+                                                <td></td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">GNED 12</th>
                                                 <td>Dalumat Ng/Sa Filipino</td>
                                                 <td>3.00</td>
                                                 <td class="fw-bold">{{usergrade1.gned12}}</td>
+                                                <td class="fst-italic">GNED 11</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">GNED 03</th>
                                                 <td>Mathematics in the Modern World</td>
                                                 <td>3.00</td>
                                                 <td class="fw-bold">{{usergrade1.gned03}}</td>
+                                                <td></td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">DCIT 23</th>
                                                 <td>Computer Programming</td>
                                                 <td>3.00</td>
                                                 <td class="fw-bold">{{usergrade1.dcit23}}</td>
+                                                <td class="fst-italic">DCIT 22</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">ITEC 50</th>
                                                 <td>Web Systems and Technologies 1</td>
                                                 <td>3.00</td>
                                                 <td class="fw-bold">{{usergrade1.itec50}}</td>
+                                                <td class="fst-italic">DCIT 21*</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">FITT 2</th>
                                                 <td>Fitness Exercise</td>
                                                 <td>2.00</td>
                                                 <td class="fw-bold">{{usergrade1.fitt2}}</td>
+                                                <td class="fst-italic">FITT 1</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">NSTP 2</th>
                                                 <td>National Service Training Program 2</td>
                                                 <td>3.00</td>
                                                 <td class="fw-bold">{{usergrade1.nstp2}}</td>
+                                                <td></td>
                                             </tr>
+                                        {% endif %}
                                              <!--SECOND YEAR FIRST SEM-->
                                              {% if usergrade2 %}
+                                             <tr class="text-white bg-success">
+                                              <th class="text-center">SECOND YEAR: </th>
+                                              <th >FIRST SEMESTER</th>
+                                              <td></td>
+                                              <td></td>
+                                              <td></td>
+                                             </tr>
+                                             <tr class="text-success">
+                                              <th scope="col" >Course Code</th>
+                                              <th scope="col">Course Title</th>
+                                              <th scope="col">Units</th>
+                                              <th scope="col">Grades</th>
+                                              <th scope="col">Pre-requisite</th>
+                                          </tr>
                                             <tr>
                                               <th scope="row">GNED 04</th>
                                               <td>Mga Babasahin Hinggil sa Kasaysayan ng Pilipinas</td>
                                               <td>3.00</td>
                                               <td class="fw-bold">{{usergrade2.gned04}}</td>
+                                              <td></td>
                                             </tr>
                                             <tr>
                                               <th scope="row">GNED 07</th>
                                               <td>The Contemporary World</td>
                                               <td>3.00</td>
                                               <td class="fw-bold">{{usergrade2.gned07}}</td>
+                                              <td></td>
                                             </tr>
                                             <tr>
                                               <th scope="row">GNED 10</th>
                                               <td>Gender and Society</td>
                                               <td>3.00</td>
                                               <td class="fw-bold">{{usergrade2.gned10}}</td>
+                                              <td></td>
                                             </tr>
                                             <tr>
                                               <th scope="row">GNED 14</th>
                                               <td>Panitikang Panlipunan</td>
                                               <td>3.00</td>
                                               <td class="fw-bold">{{usergrade2.gned14}}</td>
+                                              <td class="fst-italic">GNED 11</td>
                                               </tr>
                                             <tr>
                                               <th scope="row">ITEC 55</th>
                                               <td>Platform Technologies</td>
                                               <td>3.00</td>
                                               <td class="fw-bold">{{usergrade2.itec55}}</td>
+                                              <td class="fst-italic">DCIT 23</td>
                                             </tr>
                                             <tr>
                                               <th scope="row">DCIT 24</th>
                                               <td>Information Management</td>
                                               <td>3.00</td>
                                               <td class="fw-bold">{{usergrade2.dcit24}}</td>
+                                              <td class="fst-italic">DCIT 23</td>
                                             </tr>
                                             <tr>
                                               <th scope="row">DICT 50</th>
                                               <td>Object Oriented Programming</td>
                                               <td>3.00</td>
                                               <td class="fw-bold">{{usergrade2.dcit50}}</td>
+                                              <td class="fst-italic">DCIT 23</td>
                                             </tr>
                                             <tr>
                                               <th scope="row">FITT 3</th>
                                               <td>Physical Activities towards Health and Fitness I</td>
                                               <td>2.00</td>
                                               <td class="fw-bold">{{usergrade2.fitt3}}</td>
+                                              <td class="fst-italic">FITT 1</td>
                                               {% endif %}
                                             </tr>
                                             <!--SECOND YEAR SECOND SEM-->
+                                            <tr class="text-white bg-success">
+                                              <th class="text-center">SECOND YEAR:</th>
+                                              <th >SECOND SEMESTER</th>
+                                              <td></td>
+                                              <td></td>
+                                              <td></td>
+                                             </tr>
+                                            <tr class="text-success">
+                                              <th scope="col" >Course Code</th>
+                                              <th scope="col">Course Title</th>
+                                              <th scope="col">Units</th>
+                                              <th scope="col">Grades</th>
+                                              <th scope="col">Pre-requisite</th>
+                                          </tr>
                                             <tr>
                                               <th scope="row">GNED 08</th>
                                               <td>Understanding the Self</td>
                                               <td>3.00</td>
                                               <td class="fw-bold">{{usergrade3.gned08}}</td>
+                                              <td></td>
                                              </tr>
                                               <tr>
                                               <th scope="row">DCIT 25</th>
                                               <td>Data Structures and Algorithms</td>
                                               <td>3.00</td>
                                               <td class="fw-bold">{{usergrade3.dcit25}}</td>
+                                              <td class="fst-italic">DCIT 50</td>
                                               </tr>
                                               <tr>
                                               <th scope="row">ITEC 60</th>
                                               <td>Integrated Programming and Technologies 1</td>
                                               <td>3.00</td>
                                               <td class="fw-bold">{{usergrade3.itec60}}</td>
+                                              <td class="fst-italic">DCIT 50 & ITEC 55</td>
                                               </tr>
                                               <tr>
                                               <th scope="row">ITEC 65</th>
                                               <td>Open Source Technology</td>
                                               <td>3.00</td>
                                               <td class="fw-bold">{{usergrade3.itec65}}</td>
+                                              <td class="fst-italic">2nd Year Standing</td>
                                              </tr>
                                               <tr>
                                               <th scope="row">DCIT 55</th>
                                               <td>Advanced Database System</td>
                                               <td>3.00</td>
                                               <td class="fw-bold">{{usergrade3.dcit55}}</td>
+                                              <td class="fst-italic">DCIT 24</td>
                                               </tr>
                                               <tr>
                                               <th scope="row">ITEC 70</th>
                                               <td>Multimedia Systems</td>
                                               <td>3.00</td>
                                               <td class="fw-bold">{{usergrade3.itec70}}</td>
+                                              <td class="fst-italic">2nd Year Standing</td>
                                               </tr>
                                               <tr>
                                               <th scope="row">FITT 4</th>
                                               <td>Physical Activities towards Health and Fitness II</td>
                                               <td>2.00</td>
                                               <td class="fw-bold">{{usergrade3.fitt4}}</td>
+                                              <td class="fst-italic">FITT 1</td>
                                               </tr>
                                               <!--SECOND YEAR MIDYEAR-->   
+                                              <tr class="text-white bg-success">
+                                                <th class="text-center">SECOND YEAR: </th>
+                                                <th >MIDYEAR</th>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                               </tr>
+                                              <tr class="text-success">
+                                                <th scope="col" >Course Code</th>
+                                                <th scope="col">Course Title</th>
+                                                <th scope="col">Units</th>
+                                                <th scope="col">Grades</th>
+                                                <th scope="col">Pre-requisite</th>
+                                            </tr>
                                               <tr>
                                                 <th scope="row">STAT 2</th>
                                                 <td>Applied Statistics</td>
                                                 <td>3.00</td>
                                                 <td class="fw-bold">{{usergrade4.stat2}}</td>
+                                                <td class="fst-italic">2nd Year Standing</td>
                                                 </tr>
                                                 <tr>
                                                 <th scope="row">ITEC 75</th>
                                                 <td>System Integration and Architecture 1</td>
                                                 <td>3.00</td>
                                                 <td class="fw-bold">{{usergrade4.itec75}}</td>
+                                                <td class="fst-italic">ITEC 60</td>
                                                 </tr>
                                                 <!--THIRD YEAR FIRST SEM-->
+                                                <tr class="text-white bg-success">
+                                                  <th class="text-center">THIRD YEAR:</th>
+                                                  <th >FIRST SEMESTER</th>
+                                                  <td></td>
+                                                  <td></td>
+                                                  <td></td>
+                                                 </tr>
+                                                <tr class="text-success">
+                                                  <th scope="col" >Course Code</th>
+                                                  <th scope="col">Course Title</th>
+                                                  <th scope="col">Units</th>
+                                                  <th scope="col">Grades</th>
+                                                  <th scope="col">Pre-requisite</th>
+                                              </tr>
                                                 <tr>
                                                   <th scope="row">ITEC 80</th>
                                                   <td>Introduction to Human Computer Interaction</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade5.itec80}}</td>
+                                                  <td class="fst-italic">3rd Year Standing</td>
                                                  </tr>
                                                   <tr>
                                                   <th scope="row">ITEC 85</th>
                                                   <td>Information Assurance and Security 1</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade5.itec85}}</td>
+                                                  <td class="fst-italic">ITEC 75</td>
                                                   </tr>
                                                   <tr>
                                                   <th scope="row">ITEC 90</th>
                                                   <td>Network Fundamentals</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade5.itec90}}</td>
+                                                  <td class="fst-italic">ITEC 55</td>
                                                   </tr>
                                                   <tr>
                                                   <th scope="row">INSY 55</th>
                                                   <td>System Analysis and Design</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade5.insy55}}</td>
+                                                  <td class="fst-italic">3rd Year Standing</td>
                                                   </tr>
                                                   <tr>
                                                   <th scope="row">DCIT 26</th>
                                                   <td>Application Development and Emerging Technologies</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade5.dcit26}}</td>
+                                                  <td class="fst-italic">DCIT 55</td>
                                                   </tr>
                                                   <tr>
                                                   <th scope="row">DCIT 60</th>
                                                   <td>Methods of Research</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade5.dcit60}}</td>
+                                                  <td class="fst-italic">3rd Year Standing</td>
                                                  </tr>
                                                  <!--THIRD YEAR SECOND SEM-->
+                                                 <tr class="text-white bg-success">
+                                                  <th class="text-center">THIRD YEAR: </th>
+                                                  <th >SECOND SEMESTER</th>
+                                                  <td></td>
+                                                  <td></td>
+                                                  <td></td>
+                                                 </tr>
+                                                 <tr class="text-success">
+                                                  <th scope="col" >Course Code</th>
+                                                  <th scope="col">Course Title</th>
+                                                  <th scope="col">Units</th>
+                                                  <th scope="col">Grades</th>
+                                                  <th scope="col">Pre-requisite</th>
+                                              </tr>
                                                  <tr>
                                                   <th scope="row">GNED 09</th>
                                                   <td>Rizal: Life, Works, and Writings</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade6.gned09}}</td>
+                                                  <td class="fst-italic">GNED 04</td>
                                                   </tr>
                                                   <tr>
                                                   <th scope="row">ITEC 95</th>
                                                   <td>Quantitative Methods (Modeling & Simulation)</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade6.itec95}}</td>
+                                                  <td class="fst-italic">COSC 50 & STAT 2</td>
                                                   </tr>
                                                   <tr>
                                                   <th scope="row">ITEC 101</th>
                                                   <td>IT ELECTIVE 1 (Human Computer Interaction 2)</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade6.itec101}}</td>
+                                                  <td class="fst-italic">ITEC 80</td>
                                                   </tr>
                                                   <tr>
                                                   <th scope="row">ITEC 106</th>
                                                   <td>IT ELECTIVE 2 (Web System and Technologies 2)</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade6.itec106}}</td>
+                                                  <td class="fst-italic">ITEC 50</td>
                                                   </tr>
                                                   <tr>
                                                   <th scope="row">ITEC 100</th>
                                                   <td>Information Assurance and Security 2</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade6.itec100}}</td>
+                                                  <td class="fst-italic">ITEC 85</td>
                                                   </tr>
                                                   <tr>
                                                   <th scope="row">ITEC 105</th>
                                                   <td>Network Management</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade6.itec105}}</td>
+                                                  <td class="fst-italic">ITEC 90</td>
                                                   </tr>
                                                   <tr>
                                                   <th scope="row">ITEC 200A</th>
                                                   <td>Capstone Project and Research 1</td>
                                                   <td>3.00</td>
                                                   <td class="fw-bold">{{usergrade6.itec200a}}</td>
+                                                  <td class="fst-italic">DCIT 60, DCIT 26, <br> ITEC 85,  70% Total<br> Units Taken</td>
                                                   </tr>
                                                    <!--FOURTH YEAR FIRST SEM-->
+                                                   <tr class="text-white bg-success">
+                                                    <th class="text-center">FOURTH YEAR: </th>
+                                                    <th >FIRST SEMESTER</th>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                   </tr>
+                                                   <tr class="text-success">
+                                                    <th scope="col" >Course Code</th>
+                                                    <th scope="col">Course Title</th>
+                                                    <th scope="col">Units</th>
+                                                    <th scope="col">Grades</th>
+                                                    <th scope="col">Pre-requisite</th>
+                                                </tr>
                                                    <tr>
                                                     <th scope="row">DCIT 65</th>
                                                     <td>Social and Professional Issues</td>
                                                     <td>3.00</td>
                                                     <td class="fw-bold">{{usergrade7.dcit65}}</td>
+                                                    <td class="fst-italic">3rd Year Standing</td>
                                                     </tr>
                                                     <tr>
                                                     <th scope="row">ITEC 111</th>
                                                     <td>IT ELECTIVE 3 (Integrated Programming and Technologies 2)</td>
                                                     <td>3.00</td>
                                                     <td class="fw-bold">{{usergrade7.itec111}}</td>
+                                                    <td class="fst-italic">ITEC 60</td>
                                                     </tr>
                                                     <tr>
                                                     <th scope="row">ITEC 116</th>
                                                     <td>IT ELECTIVE 4 (Systems Integration and Architecture 2)</td>
                                                     <td>3.00</td>
                                                     <td class="fw-bold">{{usergrade7.itec116}}</td>
+                                                    <td class="fst-italic">ITEC 75</td>
                                                    </tr>
                                                     <tr>
                                                     <th scope="row">ITEC 110</th>
                                                     <td>Systems Administration and Maintenance</td>
                                                     <td>3.00</td>
                                                     <td class="fw-bold">{{usergrade7.itec110}}</td>
+                                                    <td class="fst-italic">ITEC 100</td>
                                                    </tr>
                                                     <tr>
                                                     <th scope="row">ITEC 200B</th>
                                                     <td>Capstone Project and Research 2</td>
                                                     <td>3.00</td>
                                                     <td class="fw-bold">{{usergrade7.itec200b}}</td>
+                                                    <td class="fst-italic">ITEC 200A</td>
                                                     </tr>
                                                      <!--FOURTH YEAR SECOND SEM-->
+                                                     <tr class="text-white bg-success">
+                                                      <th class="text-center">FOURTH YEAR: </th>
+                                                      <th >SECOND SEMESTER</th>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td></td>
+                                                     </tr>
+                                                     <tr class="text-success">
+                                                      <th scope="col" >Course Code</th>
+                                                      <th scope="col">Course Title</th>
+                                                      <th scope="col">Units</th>
+                                                      <th scope="col">Grades</th>
+                                                      <th scope="col">Pre-requisite</th>
+                                                  </tr>
                                                      <tr>
                                                       <th scope="row">ITEC 199</th>
                                                       <td>Practicum (Minimum 486 Hours)</td>
                                                       <td>6.00</td>
                                                       <td class="fw-bold">{{usergrade8.itec199}}</td>
+                                                      <td class="fst-italic">DCIT 26, ITEC 85, <br> 70% Total  Units<br> Taken</td>
                                                      </tr>
                                               </tbody>
                                           </table>
@@ -469,14 +659,15 @@
                               </div>
                               <!--end of subject table-->
                           </div>
-                          <!--INPUT of GRADES-->
-                          <div class="col-md-3">                 
+                                           
                 </form>
               </div>
             </div>
+
           </div>
         </div>
       </div>
+
     </main>
   </div>
 </div>
