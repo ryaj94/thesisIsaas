@@ -5,7 +5,7 @@ from django.contrib.auth.models import Group
 
 def create_profile(sender , instance, created, **kwargs):
     if created:
-         group = Group.objects.get(name='student')
+         group = Group.objects.get(name='forapproval')
          instance.groups.add(group)
          studentprof.objects.create(
             user=instance

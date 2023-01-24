@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
+from django.contrib import messages
 
 
 def unauthenticated_user(view_func):
@@ -33,6 +34,10 @@ def student_only(view_func):
         if request.user.groups.exists():
             group = request.user.groups.all()[0].name
 
+        if group == 'forapproval':
+            messages.error(request, "Please wait for the approval of the admin! ")
+            return render(request, 'accounts/index.html')
+
         if group == 'admin':
             adviserprof = request.user.adviserprof
             context = {'adviserprof': adviserprof}
@@ -40,6 +45,9 @@ def student_only(view_func):
 
         if group == 'student':
             return view_func(request, *args, **kwargs)
+
+        
+            
 
 
     return wrapper_function

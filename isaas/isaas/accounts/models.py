@@ -10,7 +10,7 @@ class studentprof(models.Model):
     user_mname = models.CharField(max_length=200, verbose_name='Middle Name' , blank=True , null=True)
     user_lname = models.CharField(max_length=200, verbose_name='Last Name' , blank=True , null=True)
     user_course = models.CharField(max_length=200, verbose_name='Course' , blank=True , null=True)
-    user_yrandsec = models.CharField(max_length=200, verbose_name='Year' , blank=True , null=True)
+    user_yrandsec = models.CharField(max_length=200, verbose_name='Year' , blank=True , null=True, default='None')
     user_section = models.CharField(max_length=200, verbose_name='Section', blank=True , null=True)
     user_address = models.CharField(max_length=200, verbose_name='Address' , blank=True , null=True)
     user_cnumber = models.CharField(max_length=200, verbose_name='Contact Number' , blank=True , null=True)

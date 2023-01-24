@@ -36,6 +36,13 @@ def home(request):
 @student_only
 def studadvise(request):
     userprof1 = request.user.studentprof
+
+    if ( userprof1.user_yrandsec == 'None'):
+          rows = 0    
+          if rows == 0:
+            return redirect("home")
+
+
     
     if( userprof1.user_yrandsec == '101' ):
          usergrade = request.user.studentgrades
@@ -141,12 +148,7 @@ def studadvise(request):
          for f in range(rows):
           subj.append(model.predict([arr[f]]))
 
-    
-
-    if rows == 0:
-     return redirect("home")
-            
-
+   
 
     print(subj)
 
